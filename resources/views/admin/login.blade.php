@@ -34,8 +34,9 @@
         <!--begin::Wrapper-->
         <div class="w-lg-500px bg-white rounded shadow-sm p-10 p-lg-15 mx-auto">
           <!--begin::Form-->
-          <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="admin/index">
+          <form action="{{ url('admin/login') }}" method='post' class="form w-100" novalidate="novalidate" id="kt_sign_in_form" action="admin/index">
             <!--begin::Heading-->
+            @csrf
             <div class="text-center mb-10">
               <!--begin::Title-->
               <h1 class="text-dark mb-3">Sign In to Admin Panle</h1>
@@ -54,6 +55,11 @@
               <!--end::Label-->
               <!--begin::Input-->
               <input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off" />
+              @error('email')
+              <div class='alert alert-danger'>
+                {{ $message }}
+              </div>
+              @enderror
               <!--end::Input-->
             </div>
             <!--end::Input group-->
@@ -71,13 +77,23 @@
               <!--end::Wrapper-->
               <!--begin::Input-->
               <input class="form-control form-control-lg form-control-solid" type="password" name="password" autocomplete="off" />
+              @error('password')
+              <div class='alert alert-danger'>
+                {{ $message }}
+              </div>
+              @enderror
               <!--end::Input-->
             </div>
+            @if (Session::has('error'))
+              <div class="alert alert-danger">
+                {{ Session::get('error') }}
+              </div>
+            @endif
             <!--end::Input group-->
             <!--begin::Actions-->
             <div class="text-center">
               <!--begin::Submit button-->
-              <button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary fw-bolder me-3 my-2">
+              <button type="submit" class="btn btn-lg btn-primary fw-bolder me-3 my-2">
                 <span class="indicator-label">Sign In</span>
                 <span class="indicator-progress">Please wait...
                   <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>

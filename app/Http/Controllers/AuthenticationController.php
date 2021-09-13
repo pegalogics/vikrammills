@@ -64,17 +64,17 @@ class AuthenticationController extends Controller
     }
 
     //Admin 
-    public function loginAdmin(Request $request){
+    public function adminlogin(Request $request){
+    
         if ($request->method() == 'POST') {
             $this->validate($request, [
                 'email' => 'required|email',
                 'password' => 'required'
             ]);
-            $user = User::where('email', $request->email)->first();
-            if ($user) {
-                if (md5($request->password) ==  $user->password) {
-                    $token = $user->createToken('MyApp')->accessToken;
-                    Session::put('user', $user);
+            $admin = Admin::where('email', $request->email)->first();
+            if ($admin) {
+                if ($request->password ==  $admin->password) {
+                    Session::put('admin', $admin);
                     return redirect('admin/dashboard');
                 } else {
                     return redirect('admin/login')->with('error', 'Invalid Password');
@@ -83,8 +83,9 @@ class AuthenticationController extends Controller
                 return redirect('admin/login')->with('error', 'Invalid Email');
             }
         }
+        return view('admin.login');
     }
-    public function signupAdmin(Request $request) {
+    public function adminsingup(Request $request) {
         if ($request->method() == 'POST') {
             //validation
             $request->validate([
@@ -104,7 +105,7 @@ class AuthenticationController extends Controller
             return redirect('admin/login');
         }
     }
-    public function logoutAdmin(Request $request) {
+    public function adminlogout(Request $request) {
         Session::forget('user');
         return back();
     }

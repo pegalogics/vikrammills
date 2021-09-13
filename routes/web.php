@@ -21,12 +21,12 @@ Route::any('forgot-password',[AuthenticationController::class,'forgotPassword'])
 Route::any('reset-password',[AuthenticationController::class,'resetPassword']);
 Route::any('verify-email',[AuthenticationController::class,'verifyEmail']);
 
-Route::any('loginAdmin',[AuthenticationController::class,'loginAdmin']);
-Route::any('logoutAdmin',[AuthenticationController::class,'logoutAdmin']);
-Route::any('signupAdmin',[AuthenticationController::class,'signupAdmin']);
-Route::any('forgot-passwordAdmin',[AuthenticationController::class,'forgotPasswordAdmin']);
-Route::any('reset-passwordAdmin',[AuthenticationController::class,'resetPasswordAdmin']);
-Route::any('verify-emailAdmin',[AuthenticationController::class,'verifyEmailAdmin']);
+Route::any('admin/login',[AuthenticationController::class,'adminlogin']);
+Route::any('admin/logout',[AuthenticationController::class,'adminlogout']);
+Route::any('admin/singup',[AuthenticationController::class,'signup']);
+Route::any('admin/forgot-password',[AuthenticationController::class,'adminforgotPassword']);
+Route::any('admin/reset-password',[AuthenticationController::class,'adminresetPassword']);
+Route::any('admin/verify-email',[AuthenticationController::class,'adminverifyEmail']);
 
 
 
@@ -42,6 +42,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::get('/index', function () {
        return view('admin/index'); 
     });
+    Route::get('dashboard',[AdminController::class, 'dashboard']);
     Route::get('/testimonials', [TestimonialController::class, 'index'] );
 
     Route::get('/books', [BookController::class, 'index']);

@@ -275,13 +275,17 @@
                                      type="password"
                                      name="password"
                                      placeholder="Password"
-                                     required>
+                                     required
+                                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                               @error('password')
                                 <div
                                      class="alert alert-danger">
                                   {{ $message }}
                                 </div>
                               @enderror
+                              <div class="alert alert-success">
+                                <strong>Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</strong>
+                              </div>
                             </div>
 
                             <div
@@ -291,7 +295,9 @@
                                      type="password"
                                      name="password_confirm"
                                      placeholder="Confirm Password"
-                                     required>
+                                     required
+                                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                                     
                             </div>
                             <div id='password_confirm_text'
                                  class="offset-6 col-md-12"
@@ -307,7 +313,7 @@
                             <div
                                  class="col-md-6">
                               <input type="checkbox"
-                                     title="">
+                                     title="" required>
                               I
                               agree
                               with

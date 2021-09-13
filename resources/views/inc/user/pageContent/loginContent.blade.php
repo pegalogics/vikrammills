@@ -174,6 +174,11 @@
                  class="ltn__product-tab-area pt-30">
               <div
                    class="container">
+                   @if(Session::has('success'))
+                   <div class="alert alert-success">
+                      {{ Session::get('success') }}
+                   </div>
+                   @endif
                 <h1
                     align="center">
                   Sign
@@ -215,14 +220,14 @@
 
                               <input type="text"
                                      name="email"
-                                     placeholder="EmailId / Mobile">
+                                     placeholder="Email" required>
                             </div>
                             <div
                                  class="col-md-12">
 
                               <input type="password"
                                      name="password"
-                                     placeholder="Password">
+                                     placeholder="Password" required>
                             </div>
 
                             <div align="left"
