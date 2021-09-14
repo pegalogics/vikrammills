@@ -79,20 +79,17 @@
             <!--begin::Copyright-->
             <div class="text-dark order-2 order-md-1">
               <span class="text-muted fw-bold me-1">2021©</span>
-              <a href="" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
+              <a href="" target="_blank" class="text-gray-800 text-hover-primary">Pegalogics</a>
             </div>
             <!--end::Copyright-->
             <!--begin::Menu-->
             <ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1">
               <li class="menu-item">
-                <a href="https://keenthemes.com/faqs" target="_blank" class="menu-link px-2">About</a>
               </li>
               <li class="menu-item">
-                <a href="https://keenthemes.com/support" target="_blank" class="menu-link px-2">Support</a>
+                <a href="https://Pegalogics.com/" target="_blank" class="menu-link px-2">Support</a>
               </li>
-              <li class="menu-item">
-                <a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
-              </li>
+              
             </ul>
             <!--end::Menu-->
           </div>
@@ -749,285 +746,7 @@
   </div>
   <!--end::Activities drawer-->
   <!--begin::Exolore drawer toggle-->
-  <button id="kt_explore_toggle" class="btn btn-sm btn-white btn-active-primary shadow-sm position-fixed px-5 fw-bolder zindex-2 top-50 mt-10 end-0 transform-90" title="Explore Metronic" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover">Explore</button>
-  <!--end::Exolore drawer toggle-->
-  <!--begin::Exolore drawer-->
-  <div id="kt_explore" class="bg-white" data-kt-drawer="true" data-kt-drawer-name="explore" data-kt-drawer-activate="true" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'300px', 'lg': '375px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_explore_toggle" data-kt-drawer-close="#kt_explore_close">
-    <!--begin::Card-->
-    <div class="card shadow-none w-100">
-      <!--begin::Header-->
-      <div class="card-header" id="kt_explore_header">
-        <h3 class="card-title fw-bolder text-gray-700">Explore</h3>
-        <div class="card-toolbar">
-          <button type="button" class="btn btn-sm btn-icon btn-active-light-primary me-n5" id="kt_explore_close">
-            <!--begin::Svg Icon | path: icons/stockholm/Navigation/Close.svg-->
-            <span class="svg-icon svg-icon-2">
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)" fill="#000000">
-                  <rect fill="#000000" x="0" y="7" width="16" height="2" rx="1" />
-                  <rect fill="#000000" opacity="0.5" transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)" x="0" y="7" width="16" height="2" rx="1" />
-                </g>
-              </svg>
-            </span>
-            <!--end::Svg Icon-->
-          </button>
-        </div>
-      </div>
-      <!--end::Header-->
-      <!--begin::Body-->
-      <div class="card-body" id="kt_explore_body">
-        <!--begin::Content-->
-        <div id="kt_explore_scroll" class="scroll-y me-n5 pe-5" data-kt-scroll="true" data-kt-scroll-height="auto" data-kt-scroll-wrappers="#kt_explore_body" data-kt-scroll-dependencies="#kt_explore_header, #kt_explore_footer" data-kt-scroll-offset="5px">
-          <!--begin::Demos-->
-          <div class="mb-0">
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo1</h3>
-              <div class="overlay overflow-hidden border border-4 border-primary p-2 rounded">
-                <div class="overlay-wrapper rounded">
-                  <img src={{asset("assets/media/demos/demo1.png")}} alt="demo" class="w-100 rounded" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <a href="https://preview.keenthemes.com/pegalogics/demo1" class="btn btn-primary shadow">Preview</a>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo2</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo2.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo3</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo3.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo4</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo4.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo5</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo5.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo6</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo6.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo7</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo7.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo8</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo8.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo9</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo9.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo10</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo10.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo11</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo11.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo12</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo12.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo13</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo13.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo14</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo14.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo15</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo15.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo16</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo16.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo17</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo17.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-            <!--begin::Demo-->
-            <div class="mb-7">
-              <h3 class="fw-bold text-center mb-3">Demo18</h3>
-              <div class="overlay overflow-hidden border border-4 p-2 rounded">
-                <div class="overlay-wrapper">
-                  <img src={{asset("assets/media/demos/demo18.png")}} alt="demo" class="w-100 rounded opacity-75" />
-                </div>
-                <div class="overlay-layer bg-dark bg-opacity-10">
-                  <div class="badge badge-light-primary px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
-                </div>
-              </div>
-            </div>
-            <!--end::Demo-->
-          </div>
-          <!--end::Demos-->
-        </div>
-        <!--end::Content-->
-      </div>
-      <!--end::Body-->
-      <!--begin::Footer-->
-      <div class="card-footer py-5 text-center" id="kt_explore_footer">
-        <a href="https://1.envato.market/EA4JP" class="btn btn-primary">Purchase Metronic</a>
-      </div>
-      <!--end::Footer-->
-    </div>
-    <!--end::Card-->
-  </div>
+
   <!--end::Exolore drawer-->
   <!--end::Drawers-->
   <!--begin::Modals-->
@@ -1949,7 +1668,7 @@
                     <label class="form-label required">Business Name</label>
                     <!--end::Label-->
                     <!--begin::Input-->
-                    <input name="business_name" class="form-control form-control-lg form-control-solid" value="Keenthemes Inc." />
+                    <input name="business_name" class="form-control form-control-lg form-control-solid" value="Pegalogics Inc." />
                     <!--end::Input-->
                   </div>
                   <!--end::Input group-->
@@ -1958,11 +1677,11 @@
                     <!--begin::Label-->
                     <label class="d-flex align-items-center form-label">
                       <span class="required">Shortened Descriptor</span>
-                      <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-content="&lt;div class='p-4 rounded bg-light'&gt; &lt;div class='d-flex flex-stack text-muted mb-4'&gt; &lt;i class='fas fa-university fs-3 me-3'&gt;&lt;/i&gt; &lt;div class='fw-bold'&gt;INCBANK **** 1245 STATEMENT&lt;/div&gt; &lt;/div&gt; &lt;div class='d-flex flex-stack fw-bold text-gray-600'&gt; &lt;div&gt;Amount&lt;/div&gt; &lt;div&gt;Transaction&lt;/div&gt; &lt;/div&gt; &lt;div class='separator separator-dashed my-2'&gt;&lt;/div&gt; &lt;div class='d-flex flex-stack text-dark fw-bolder mb-2'&gt; &lt;div&gt;USD345.00&lt;/div&gt; &lt;div&gt;KEENTHEMES*&lt;/div&gt; &lt;/div&gt; &lt;div class='d-flex flex-stack text-muted mb-2'&gt; &lt;div&gt;USD75.00&lt;/div&gt; &lt;div&gt;Hosting fee&lt;/div&gt; &lt;/div&gt; &lt;div class='d-flex flex-stack text-muted'&gt; &lt;div&gt;USD3,950.00&lt;/div&gt; &lt;div&gt;Payrol&lt;/div&gt; &lt;/div&gt; &lt;/div&gt;"></i>
+                      <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-content="&lt;div class='p-4 rounded bg-light'&gt; &lt;div class='d-flex flex-stack text-muted mb-4'&gt; &lt;i class='fas fa-university fs-3 me-3'&gt;&lt;/i&gt; &lt;div class='fw-bold'&gt;INCBANK **** 1245 STATEMENT&lt;/div&gt; &lt;/div&gt; &lt;div class='d-flex flex-stack fw-bold text-gray-600'&gt; &lt;div&gt;Amount&lt;/div&gt; &lt;div&gt;Transaction&lt;/div&gt; &lt;/div&gt; &lt;div class='separator separator-dashed my-2'&gt;&lt;/div&gt; &lt;div class='d-flex flex-stack text-dark fw-bolder mb-2'&gt; &lt;div&gt;USD345.00&lt;/div&gt; &lt;div&gt;Pegalogics*&lt;/div&gt; &lt;/div&gt; &lt;div class='d-flex flex-stack text-muted mb-2'&gt; &lt;div&gt;USD75.00&lt;/div&gt; &lt;div&gt;Hosting fee&lt;/div&gt; &lt;/div&gt; &lt;div class='d-flex flex-stack text-muted'&gt; &lt;div&gt;USD3,950.00&lt;/div&gt; &lt;div&gt;Payrol&lt;/div&gt; &lt;/div&gt; &lt;/div&gt;"></i>
                     </label>
                     <!--end::Label-->
-                    <!--begin::Input-->
-                    <input name="business_descriptor" class="form-control form-control-lg form-control-solid" value="KEENTHEMES" />
+                    <!--begin::Input--> 
+                    <input name="business_descriptor" class="form-control form-control-lg form-control-solid" value="Pegalogics" />
                     <!--end::Input-->
                     <!--begin::Hint-->
                     <div class="form-text">Customers will see this shortened version of your statement descriptor</div>
@@ -2806,13 +2525,7 @@
   <!--end::Main-->
   <!--begin::Javascript-->
   @include('inc/admin/jsGlobal')
-  <!--begin::Page Custom Javascript(used by this page)-->
-  <script src={{asset("assets/js/custom/widgets.js")}}></script>
-  <script src={{asset("assets/js/custom/modals/create-account.js")}}></script>
-  <script src={{asset("assets/js/custom/modals/upgrade-plan.js")}}></script>
-  <script src={{asset("assets/js/custom/intro.js")}}></script>
-  <!--end::Page Custom Javascript-->
-  <!--end::Javascript-->
+
 </body>
 <!--end::Body-->
 

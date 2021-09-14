@@ -3,7 +3,7 @@
   class="content d-flex flex-column flex-column-fluid"
   id="kt_content">
   <!--begin::Toolbar-->
- 
+
   <!--end::Toolbar-->
   <!--begin::Post-->
   <div
@@ -93,33 +93,7 @@
               </div>
             </div>
             <!--end::Menu item-->
-            <!--begin::Menu separator-->
-            {{-- <div
-              class="separator mb-3 opacity-75">
-            </div> --}}
-            <!--end::Menu separator-->
-            <!--begin::Menu item-->
-            {{-- <div
-              class="menu-item px-3">
-              <a href="#"
-                class="menu-link px-3">New
-                Ticket</a>
-            </div> --}}
-            <!--end::Menu item-->
-            <!--begin::Menu item-->
-            {{-- <div
-              class="menu-item px-3">
-              <a href="#"
-                class="menu-link px-3">New
-                Customer</a>
-            </div> --}}
-            <!--end::Menu item-->
-            <!--begin::Menu item-->
-          
-            <!--end::Menu item-->
-            <!--begin::Menu item-->
-           
-            <!--end::Menu item-->
+
             <!--begin::Menu separator-->
             <div
               class="separator mt-3 opacity-75">
@@ -157,7 +131,9 @@
             {{ Session::get('error') }}
           </div>
         @endif
-          <h1>Products</h1>
+        <h1>
+          Products
+        </h1>
         <!--begin::Table container-->
         <!-- Button trigger modal -->
         <div
@@ -169,7 +145,7 @@
               class="btn btn-primary"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal">
-            
+
               Add
             </button>
 
@@ -219,6 +195,9 @@
                           id="photo"
                           name="file"
                           required>
+                      </div>
+                      <div
+                        class='output'>
                       </div>
                       {{-- end upload photo --}}
                       <div
@@ -323,7 +302,7 @@
                               {{ $category->name }}
                             </option>
                           @endforeach
-                          
+
 
 
 
@@ -385,6 +364,10 @@
                   Id
                 </th>
                 <th
+                  class="min-w-150px">
+                  Image
+                </th>
+                <th
                   class="min-w-140px">
                   Name
                 </th>
@@ -404,7 +387,7 @@
                   class="min-w-120px">
                   discount
                 </th>
-                   <th
+                <th
                   class="min-w-120px">
                   Descripotion
                 </th>
@@ -433,30 +416,45 @@
                       class="text-dark fw-bolder text-hover-primary fs-6">{{ $product->id }}</a>
                   </td>
                   <td>
+                    <img
+                      src="{{ url('/') . '/' . $product->pic }}"
+                      style="width:150px;height:auto">
+                  <td>
 
                     <span
-                      class="text-muted fw-bold text-muted d-block fs-7">
+                     class="text-muted fw-bold text-muted d-block fs-7"
+                     >
                       {{ $product->name }}</span>
                   </td>
                   <td>
 
                     <span
-                      class="text-muted fw-bold text-muted d-block fs-7">{{ $product->price }}</span>
+                     class="text-muted fw-bold text-muted d-block fs-7"
+                      >{{ $product->price }}</span>
                   </td>
                   <td>
 
                     <span
-                      class="text-muted fw-bold text-muted d-block fs-7">{{ $product->quantity }}</span>
+                     class="text-muted fw-bold text-muted d-block fs-7"
+                      >{{ $product->quantity }}</span>
                   </td>
-                  <td
-                    class="text-dark fw-bolder text-hover-primary fs-6">
+                  <td>
+                    <span
+                     class="text-muted fw-bold text-muted d-block fs-7">
                     {{ $product->weight }}
+                    </span>
                   </td>
                   <td>
+                    <span
+                     class="text-muted fw-bold text-muted d-block fs-7">
                     {{ $product->discount }}
+                    </span>
                   </td>
                   <td>
+                    <span
+                     class="text-muted fw-bold text-muted d-block fs-7">
                     {{ $product->description }}
+                    </span>
                   </td>
                   <td
                     class="text-end">
@@ -515,6 +513,9 @@
                                   class="form-control mb-2"
                                   id="photo"
                                   name="file">
+                              </div>
+                              <div
+                                class='output'>
                               </div>
                               {{-- end upload photo --}}
                               <div
@@ -621,6 +622,7 @@
 
 
 
+
                                 </select>
                               </div>
                               {{-- Description --}}
@@ -653,7 +655,7 @@
                     {{-- delete model and button --}}
                     <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-danger"
                       data-bs-toggle="modal"
                       data-bs-target={{ '#exampleModaldelete' . $product->id }}>
                       delete
@@ -720,6 +722,7 @@
                 </tr>
               @endforeach
               
+
 
 
             </tbody>

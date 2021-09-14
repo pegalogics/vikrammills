@@ -208,6 +208,23 @@
                       method='post'
                       enctype='multipart/form-data'>
                       @csrf
+                      {{-- upload photo --}}
+                      <div
+                        class="form-group">
+                        <p style='text-align:left;'
+                          for="photo">
+                          Photo
+                        </p>
+                        <input
+                          type="file"
+                          class="form-control mb-2"
+                          id="photo"
+                          name="file">
+                      </div>
+                      <div
+                        class='output'>
+                      </div>
+                      {{-- end upload photo --}}
 
                       <div
                         class="form-group">
@@ -282,6 +299,10 @@
                   testimonial
                   Id
                 </th>
+                <th
+                  class="w-25px">
+                  image
+                </th>
 
                 <th
                   class="min-w-140px">
@@ -316,6 +337,11 @@
                     <a href="#"
                       class="text-dark fw-bolder text-hover-primary fs-6">{{ $testimonial->id }}</a>
                   </td>
+                  <td>
+                    <img
+                      src="{{ url('/') . '/' . $testimonial->pic }}"
+                      style="width:150px;height:auto">
+                  <td>
                   <td>
 
                     <span
@@ -390,6 +416,24 @@
                               method='post'
                               enctype='multipart/form-data'>
                               @csrf
+                              {{-- upload photo --}}
+                              <div
+                                class="form-group">
+                                <p style='text-align:left;'
+                                  for="photo">
+                                  Photo
+                                </p>
+                                <input
+                                  type="file"
+                                  class="form-control mb-2"
+                                  id="photo"
+                                  name="file">
+                              </div>
+                              <div
+                                class='output'>
+                              </div>
+                              {{-- end upload photo --}}
+
                               <div
                                 class="form-group">
                                 <p style='text-align:left;'
@@ -438,7 +482,7 @@
                     {{-- delete model and button --}}
                     <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-danger"
                       data-bs-toggle="modal"
                       data-bs-target={{ '#exampleModaldelete' . $testimonial->id }}>
                       delete
@@ -504,7 +548,8 @@
                   </td>
                 </tr>
               @endforeach
-              
+
+
 
 
 

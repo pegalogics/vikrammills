@@ -268,10 +268,10 @@
                   Name
                 </th>
                 <th
-                <th
+                
                   class="min-w-100px text-end">
                   Actions
-                </th>
+                </>
               </tr>
             </thead>
             <!--end::Table head-->
@@ -391,7 +391,7 @@
                     {{-- delete model and button --}}
                     <button
                       type="button"
-                      class="btn btn-primary"
+                      class="btn btn-danger"
                       data-bs-toggle="modal"
                       data-bs-target={{ '#exampleModaldelete' . $cateogry->id }}>
                       delete
