@@ -1,4 +1,4 @@
 @extends('layouts.masterAdmin')
 @section('content')
-  @include('inc/admin/testimonialsContent')
+  @include('inc/admin/categoryContent')
 @endsection

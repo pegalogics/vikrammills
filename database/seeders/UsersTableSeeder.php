@@ -147,6 +147,22 @@ class UsersTableSeeder extends Seeder
                 'two_factor_secret' => NULL,
                 'updated_at' => '2021-09-13 08:27:12',
             ),
+            8 => 
+            array (
+                'created_at' => '2021-09-13 11:15:33',
+                'current_team_id' => NULL,
+                'email' => 'prashantsingh24089@gmail.com',
+                'email_verified_at' => NULL,
+                'id' => 10,
+                'mobile' => NULL,
+                'name' => 'prashant9 singh9',
+                'password' => '6445071763f7fa0b814c0317a19397da',
+                'profile_photo_path' => NULL,
+                'remember_token' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'two_factor_secret' => NULL,
+                'updated_at' => '2021-09-13 11:15:33',
+            ),
         ));
         
         

@@ -12,7 +12,7 @@
        id="kt_aside_logo">
     <!--begin::Logo-->
     <a
-       href="index.html">
+       href="{{ url('admin/dashboard')}}">
       Vikram mills
       <!-- <img alt="Logo" src={{ asset('assets/media/logos/logo-1.svg') }} class="h-15px logo" /> -->
     </a>
@@ -74,7 +74,7 @@
         <div
              class="menu-item">
           <a class="menu-link active"
-             href="index.html">
+             href="{{ url('admin/dashboard') }}">
             <span
                   class="menu-icon">
               <!--begin::Svg Icon | path: icons/stockholm/Design/PenAndRuller.svg-->
@@ -109,7 +109,7 @@
         <div
              class="menu-item">
           <a class="menu-link"
-             href="pages/projects/list.html">
+             href="{{ url('admin/products')}}">
             <span
                   class="menu-bullet">
               <span
@@ -117,6 +117,32 @@
             </span>
             <span
                   class="menu-title">Products</span>
+          </a>
+        </div>
+                <div
+             class="menu-item">
+          <a class="menu-link"
+             href="{{ url('admin/category')}}">
+            <span
+                  class="menu-bullet">
+              <span
+                    class="bullet bullet-dot"></span>
+            </span>
+            <span
+                  class="menu-title">Category</span>
+          </a>
+        </div>
+        <div
+             class="menu-item">
+          <a class="menu-link"
+             href="{{ url('admin/testimonial')}}">
+            <span
+                  class="menu-bullet">
+              <span
+                    class="bullet bullet-dot"></span>
+            </span>
+            <span
+                  class="menu-title">Testimonial</span>
           </a>
         </div>
       </div>

@@ -259,6 +259,54 @@ class PersonalAccessTokensTableSeeder extends Seeder
                 'tokenable_type' => 'App\\Models\\User',
                 'updated_at' => '2021-09-13 08:27:40',
             ),
+            20 => 
+            array (
+                'abilities' => '["*"]',
+                'created_at' => '2021-09-13 11:16:20',
+                'id' => 21,
+                'last_used_at' => NULL,
+                'name' => 'MyApp',
+                'token' => 'c1b121cbba18ad08ee929b0375a9c51310394b316076a5197b4ca8baef099f51',
+                'tokenable_id' => 10,
+                'tokenable_type' => 'App\\Models\\User',
+                'updated_at' => '2021-09-13 11:16:20',
+            ),
+            21 => 
+            array (
+                'abilities' => '["*"]',
+                'created_at' => '2021-09-13 11:55:50',
+                'id' => 22,
+                'last_used_at' => NULL,
+                'name' => 'MyApp',
+                'token' => '52d7d191a2b1f825fcec33dde3882d8707c625793ec4ba1e39fdda66afd9806f',
+                'tokenable_id' => 1,
+                'tokenable_type' => 'App\\Models\\User',
+                'updated_at' => '2021-09-13 11:55:50',
+            ),
+            22 => 
+            array (
+                'abilities' => '["*"]',
+                'created_at' => '2021-09-13 12:06:22',
+                'id' => 23,
+                'last_used_at' => NULL,
+                'name' => 'MyApp',
+                'token' => 'f5464c0ea58bd16eb2787e6b12e8e5e5833298ea163f2c8fd0d97e3f2bdaecc1',
+                'tokenable_id' => 1,
+                'tokenable_type' => 'App\\Models\\User',
+                'updated_at' => '2021-09-13 12:06:22',
+            ),
+            23 => 
+            array (
+                'abilities' => '["*"]',
+                'created_at' => '2021-09-13 12:09:44',
+                'id' => 24,
+                'last_used_at' => NULL,
+                'name' => 'MyApp',
+                'token' => '3cc55923899dc9e9c1ff63ab15da66c9aa9fd71cd8cb627508e808b20c17736c',
+                'tokenable_id' => 1,
+                'tokenable_type' => 'App\\Models\\User',
+                'updated_at' => '2021-09-13 12:09:44',
+            ),
         ));
         
         

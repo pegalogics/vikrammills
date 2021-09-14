@@ -98,7 +98,7 @@
              class="ltn__utilize-buttons ltn__utilize-buttons-2">
           <ul>
             <li>
-              <a href={{ url("signup") }}
+              <a href={{ url('signup') }}
                  title="Login">
                 <span
                       class="utilize-btn-icon">
@@ -174,11 +174,12 @@
                  class="ltn__product-tab-area pt-30">
               <div
                    class="container">
-                   @if(Session::has('success'))
-                   <div class="alert alert-success">
-                      {{ Session::get('success') }}
-                   </div>
-                   @endif
+                @if (Session::has('success'))
+                  <div
+                       class="alert alert-success">
+                    {{ Session::get('success') }}
+                  </div>
+                @endif
                 <h1
                     align="center">
                   Sign
@@ -220,21 +221,29 @@
 
                               <input type="text"
                                      name="email"
-                                     placeholder="Email" required>
+                                     placeholder="Email"
+                                     required>
                             </div>
                             <div
                                  class="col-md-12">
 
                               <input type="password"
                                      name="password"
-                                     placeholder="Password" required>
+                                     placeholder="Password"
+                                     required>
                             </div>
+                            @if (Session::has('error'))
+                              <div
+                                   class="alert alert-success">
+                                {{ Session::get('error') }}
+                              </div>
+                            @endif
 
                             <div align="left"
                                  class="col-md-12">
                               <div
                                    class="col-lg-6">
-                                <a
+                                <a    
                                    href="#"><strong>Forgot
                                     Password?</strong></a>
                               </div>

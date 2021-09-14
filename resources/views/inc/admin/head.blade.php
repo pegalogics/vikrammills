@@ -9,3 +9,6 @@
 <link href={{asset("assets_admin/plugins/global/plugins.bundle.css")}} rel="stylesheet" type="text/css" />
 <link href={{asset("assets_admin/css/style.bundle.css")}} rel="stylesheet" type="text/css" />
 <!--end::Global Stylesheets Bundle-->
+
+<!-- Bootstrap -->
+<!-- Latest compiled and minified CSS -->

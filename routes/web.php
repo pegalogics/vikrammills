@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Controllers\AuthenticationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\AuthenticationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,10 +32,16 @@ Route::any('admin/reset-password',[AuthenticationController::class,'adminresetPa
 Route::any('admin/verify-email',[AuthenticationController::class,'adminverifyEmail']);
 
 
-
+Route::get('/index',[UserController::class,'index']);
+Route::get('/',[UserController::class,'index']);
 //middlewareGroups
-Route::middleware(['authentication'])->group(function () {
-    Route::get('/index',[UserController::class,'index']);
+
+Route::group(['prefix' => 'customer', 'middleware' => ['authentication']], function () {
+    Route::get('/profile',[UserController::class,'index']);
+    Route::get('/profile/edit/{id}',[UserController::class,'edit']);
+    //add to cards
+    Route::post('/profile/{customer_id}/add-to-cards{product_id}',[UserController::class,'addToCards']);
+
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
@@ -43,9 +52,27 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
        return view('admin/index'); 
     });
     Route::get('dashboard',[AdminController::class, 'dashboard']);
-    Route::get('/testimonials', [TestimonialController::class, 'index'] );
 
-    Route::get('/books', [BookController::class, 'index']);
+    //product
+    Route::any('/products', [AdminController::class, 'products'] );
+    Route::post('/products/edit/{id}', [AdminController::class, 'productEdit']);
+    Route::get('/products/delete/{id}', [AdminController::class, 'productDelete'] );
+
+    Route::any('/category',[CategoryController::class, 'view']);
+    
+    Route::any('/category/create',[CategoryController::class, 'create']);
+    Route::any('/category/edit/{id}',[CategoryController::class, 'edit']);
+    Route::any('/category/delete/{id}',[CategoryController::class, 'delete']);
+
+    //Testimonial
+    Route::any('/testimonial',[TestimonialController::class, 'view']);
+    Route::any('/testimonial/create',[TestimonialController::class, 'create']);
+    Route::any('/testimonial/edit/{id}',[TestimonialController::class, 'edit']);
+    Route::any('/testimonial/delete/{id}',[TestimonialController::class, 'delete']);
+    //END Testimonial
+
+    Route::get('/logout',[AdminController::class, 'logout']);
+
 });
 // Route::get('/', function () {
 //     return view('welcome');

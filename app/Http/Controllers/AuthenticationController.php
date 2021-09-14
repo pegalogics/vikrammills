@@ -106,7 +106,7 @@ class AuthenticationController extends Controller
         }
     }
     public function adminlogout(Request $request) {
-        Session::forget('user');
+        Session::forget('admin');
         return back();
     }
 }
