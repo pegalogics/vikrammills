@@ -20,7 +20,7 @@ class AdminController extends Controller
             $file = $request->file('file');
             $file_path = $file->move(public_path(), $file->getClientOriginalName());
 
-            $Product->pic = $file_path;
+            $Product->pic = $file->getClientOriginalName();
             $Product->name = $request->name;
             $Product->description = $request->description;
             $Product->quantity = $request->quantity;
@@ -47,7 +47,7 @@ class AdminController extends Controller
         $product->weight = $request->weight;
         $product->discount = $request->discount;
         if (!empty($file_path)) {
-            $product->pic = $file_path;
+                $product->pic = $file->getClientOriginalName();   
         }
         $product->save();
 
