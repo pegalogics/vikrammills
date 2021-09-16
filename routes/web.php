@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
@@ -36,15 +37,20 @@ Route::any('admin/reset-password',[AuthenticationController::class,'adminresetPa
 Route::any('admin/verify-email',[AuthenticationController::class,'adminverifyEmail']);
 
 
+// Customer Routes
 Route::get('/index',[UserController::class,'index']);
 Route::get('/',[UserController::class,'index']);
-//middlewareGroups
+Route::get('/profile',[UserController::class,'index']);
+Route::get('/profile/edit/{id}',[UserController::class,'edit']);
+//add to cards
+Route::post('/profile/{customer_id}/add-to-cards{product_id}',[UserController::class,'addToCards']);
+
+//Pages
+Route::resource('about',[AboutController::class]);
+
 
 Route::group(['prefix' => 'customer', 'middleware' => ['authentication']], function () {
-    Route::get('/profile',[UserController::class,'index']);
-    Route::get('/profile/edit/{id}',[UserController::class,'edit']);
-    //add to cards
-    Route::post('/profile/{customer_id}/add-to-cards{product_id}',[UserController::class,'addToCards']);
+
 
 });
 

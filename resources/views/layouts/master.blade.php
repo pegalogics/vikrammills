@@ -3,9 +3,9 @@
       lang="zxx">
     @include('inc/user/head')
     <body>
-        @yield('header')
+        @include("inc.user.Header")
         @yield('content')
-        @yield('footer')
+        @include("inc.user.footer")
         @include('inc/user/script')
     </body>
 </html>
