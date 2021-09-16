@@ -40,9 +40,10 @@ $(document).ready(function() {
     var output = $('.output');
     output.empty();
     var file = this.files[0];
-    var fileName = file.name;
-    path = "{{ url('/') }}/" + fileName;
-    output.append('<img src="' + path + '" style="width:200px;height:auto"  />' );
+    img_obj = URL.createObjectURL(file);
+    var img = $('<img>').attr('src', img_obj);
+    output.append(img);
+    
    });
 });
 </script>
