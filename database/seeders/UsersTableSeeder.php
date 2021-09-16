@@ -163,6 +163,22 @@ class UsersTableSeeder extends Seeder
                 'two_factor_secret' => NULL,
                 'updated_at' => '2021-09-13 11:15:33',
             ),
+            9 => 
+            array (
+                'created_at' => '2021-09-14 13:09:50',
+                'current_team_id' => NULL,
+                'email' => 'lokesh@pegalogics.com',
+                'email_verified_at' => NULL,
+                'id' => 11,
+                'mobile' => NULL,
+                'name' => 'Lokesh Dewangan',
+                'password' => '48e959d35feafde79e174747076efe8c',
+                'profile_photo_path' => NULL,
+                'remember_token' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'two_factor_secret' => NULL,
+                'updated_at' => '2021-09-14 13:09:50',
+            ),
         ));
         
         

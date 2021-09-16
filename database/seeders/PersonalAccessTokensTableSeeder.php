@@ -307,6 +307,18 @@ class PersonalAccessTokensTableSeeder extends Seeder
                 'tokenable_type' => 'App\\Models\\User',
                 'updated_at' => '2021-09-13 12:09:44',
             ),
+            24 => 
+            array (
+                'abilities' => '["*"]',
+                'created_at' => '2021-09-14 13:12:51',
+                'id' => 25,
+                'last_used_at' => NULL,
+                'name' => 'MyApp',
+                'token' => 'b9715e93373376133844a8eb0cad3440fba9eb87a4071a4ec02c3aa1a3d4f58a',
+                'tokenable_id' => 11,
+                'tokenable_type' => 'App\\Models\\User',
+                'updated_at' => '2021-09-14 13:12:51',
+            ),
         ));
         
         

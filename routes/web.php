@@ -3,9 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\AuthenticationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,21 +49,34 @@ Route::group(['prefix' => 'customer', 'middleware' => ['authentication']], funct
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
+    //Dashboard
+    Route::get('/dashboard',[AdminController::class,'index']);
+
     Route::get('/', function () {
         return view('admin/login');
     });
     Route::get('/index', function () {
        return view('admin/index'); 
     });
-    Route::get('dashboard',[AdminController::class, 'dashboard']);
+
+    Route::get('dashboard',[DashboardController::class, 'dashboard']);
+
+
+    //Order resource
+    Route::resource('orders', OrderController::class);
+    Route::get('order-returns', [OrderController::class,'indexOrderReturn'])->name('order.return');
+
+    //Customer resource
+    Route::resource('customers', CustomerController::class);
+    
 
     //product
+    Route::any('/add-product', [AdminController::class, 'addProducts'] );
     Route::any('/products', [AdminController::class, 'products'] );
     Route::post('/products/edit/{id}', [AdminController::class, 'productEdit']);
     Route::get('/products/delete/{id}', [AdminController::class, 'productDelete'] );
 
     Route::any('/category',[CategoryController::class, 'view']);
-    
     Route::any('/category/create',[CategoryController::class, 'create']);
     Route::any('/category/edit/{id}',[CategoryController::class, 'edit']);
     Route::any('/category/delete/{id}',[CategoryController::class, 'delete']);
@@ -71,7 +88,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::any('/testimonial/delete/{id}',[TestimonialController::class, 'delete']);
     //END Testimonial
 
-    Route::get('/logout',[AdminController::class, 'logout']);
+    Route::get('admin/logout',[AdminController::class, 'adminlogout']);
 
 });
 // Route::get('/', function () {
