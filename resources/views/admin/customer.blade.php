@@ -83,6 +83,9 @@
               </div>
               <div
                 class="card-body">
+                 @error('email')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                 @if (Session::has('success'))
                   <div
                     class="alert alert-success">
@@ -95,6 +98,7 @@
                     {{ Session::get('error') }}
                   </div>
                 @endif
+
                 <table
                   id="example1"
                   class="table table-stripped">
@@ -153,9 +157,10 @@
                         </td>
                         <th>
                           <img
-                            class="img-thumbnail"
-                            src="{{ asset('assets_admin/img/no-image.png') }}"
-                            alt="">
+                            class="img-thumbnail rounded-circle"
+                            src="{{ url('/') . '/uploads/' . $customer->pic }}"
+                            alt=""
+                            style='width:5rem; height:auto;'>
                         </th>
                         <td>
                           {{ $customer->name }}
@@ -232,7 +237,8 @@
 
                                   <form
                                     action="{{ route('customers.update', $customer->id) }}"
-                                    method="POST">
+                                    method="POST"
+                                    enctype='multipart/form-data'>
                                     @csrf
                                     @method('PUT')
                                     <div
@@ -271,7 +277,7 @@
                                     class="form-group">
                                       <p style='text-align:left;'
                                         for="name">
-                                        Name
+                                        Name*
                                       </p>
                                       <input
                                       type="text"
@@ -284,27 +290,33 @@
                                     class="form-group">
                                       <p style='text-align:left;'
                                       for="email">
-                                      Email
+                                      Email*
                                       </p>
                                       <input
                                       type="text"
                                       class="form-control"
                                       name="email"
-                                      value="{{ $customer->email }}">
+                                      value="{{ $customer->email }}"
+                                      placeholder="{{ $customer->email }}"
+                                      required\>
+
+                                     
+                                    
                                     </div>
                                     {{-- mobile --}}
                                     <div
                                     class="form-group">
                                       <p style='text-align:left;'
                                       for="mobile">
-                                      Mobile
+                                      Mobile*
                                       </p>
                                       <input
                                       type="text"
                                       class="form-control"
-                                      name="mobile"
-                                      value="{{ $customer->mobile }}">
-                                    </div>
+                                      name="tel"
+                                      value="{{ $customer->mobile }}"
+                                      required>
+                                    </div>  
                                     {{-- address textaread --}}
                                     <div
                                     class="form-group">

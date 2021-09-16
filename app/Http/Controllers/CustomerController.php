@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+
 class CustomerController extends Controller
 {
     /**
@@ -71,12 +72,39 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //validation 
+        $user = User::find($id);
+        $current_email = $user->email;
+        if ($request->email != $current_email) {
+            $this->validate($request, [
+            'email' => 'unique:users',
+        ]);
+        }
+
         //update customer
-        $customer = Customer::find($id);
-        $customer->customer = $request->customer;
-        $customer->total = $request->total;
-        $customer->created_at = $request->create_at;
-        $customer->updated_at = $request->updated_at;
+        $customer = User::find($id);
+        //upload file(photo)
+        if ($request->file('file') != null) {
+            $request->file('file')
+                ->move(public_path('uploads'), $request->file('file')
+                ->getClientOriginalName());
+            $customer->pic = $request->file('file')->getClientOriginalName();
+        }
+
+        $customer->name = $request->name;
+        if ($request->email != $current_email) {
+            $customer->email = $request->email;
+        }
+        else{
+            $customer->email = $current_email;
+        }
+        $customer->mobile = $request->mobile;
+        $customer->address = $request->address;
+        $customer->city  = $request->city;
+        $customer->state = $request->state;
+        $customer->country = $request->country;
+        $customer->zip = $request->zip;
+        $customer->ip =  $request->ip;
         $customer->status = $request->status;
         $customer->save();
         return redirect()->route('customers.index')->with('success','Customer updated successfully');
@@ -91,7 +119,7 @@ class CustomerController extends Controller
     public function destroy($id)
     {
         //delete customer
-        $customer = Customer::find($id);
+        $customer = User::find($id);
         $customer->delete();
         return redirect()->route('customers.index')->with('success','Customer deleted successfully');
     }
