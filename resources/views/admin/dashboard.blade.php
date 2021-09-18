@@ -88,6 +88,7 @@
         </div>
         <!-- /.row -->
         <!-- Main row -->
+        {{-- 
         <div class="row">
           <!-- Left col -->
           <section class="col-lg-7 connectedSortable">
@@ -139,6 +140,7 @@
           <!-- /.Left col -->
          
         </div>
+         --}}
         <!-- /.row (main row) -->
       </div><!-- /.container-fluid -->
     </section>

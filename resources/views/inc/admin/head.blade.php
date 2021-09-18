@@ -23,3 +23,11 @@
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('assets_admin/plugins/summernote/summernote-bs4.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets_admin/dist/css/custom.css') }}">
+  <style>
+    ::-webkit-file-upload-button{
+         color: #fff;
+         background-color: #007bff;
+         border-color: #007bff;
+
+    }
+  </style>

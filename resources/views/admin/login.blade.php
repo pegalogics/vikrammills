@@ -64,7 +64,7 @@
           <!-- /.col -->
           @if (Session::has('error'))
           	<div class="col-12">
-              <div class="alert alert-danger">
+              <div class="alert alert-danger mt-2">
                 {{ Session::get('error') }}
               </div>
             </div>

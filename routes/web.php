@@ -8,6 +8,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AboutAdminController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\AuthenticationController;
 
@@ -46,7 +47,8 @@ Route::get('/profile/edit/{id}',[UserController::class,'edit']);
 Route::post('/profile/{customer_id}/add-to-cards{product_id}',[UserController::class,'addToCards']);
 
 //Pages
-Route::resource('about',[AboutController::class]);
+Route::resource('about',AboutController::class);
+
 
 
 Route::group(['prefix' => 'customer', 'middleware' => ['authentication']], function () {
@@ -93,6 +95,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::any('/testimonial/edit/{id}',[TestimonialController::class, 'edit']);
     Route::any('/testimonial/delete/{id}',[TestimonialController::class, 'delete']);
     //END Testimonial
+
+    // Pages
+    Route::resource('aboutAdmin', AboutAdminController::class);
+
 
     Route::get('admin/logout',[AdminController::class, 'adminlogout']);
 

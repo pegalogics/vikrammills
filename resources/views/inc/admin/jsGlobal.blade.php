@@ -37,11 +37,11 @@ $(document).ready(function() {
   //on change input files
   $('input[type="file"]').change(function() {
     // display photo in output
-    var output = $('.output');
+    var output = $(this).parents('.form-group').find('.output');
     output.empty();
     var file = this.files[0];
     img_obj = URL.createObjectURL(file);
-    var img = $('<img>').attr('src', img_obj);
+    var img = $('<img>').attr('src', img_obj).attr('style', 'max-width:300px');
     output.append(img);
     
    });

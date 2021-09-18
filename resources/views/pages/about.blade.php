@@ -76,7 +76,7 @@
         <div class="ltn__utilize-overlay"></div>
 
         <!-- BREADCRUMB AREA START -->
-        <div class="ltn__breadcrumb-area ltn__breadcrumb-area-4 bg-overlay-theme-10--- bg-image" data-bg="img/bg/about-banner.jpg">
+        <div class="ltn__breadcrumb-area ltn__breadcrumb-area-4 bg-overlay-theme-10--- bg-image" data-bg="{{ url('public/img/about') }}/{{ $about->about_banner ?? '' }}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -98,11 +98,8 @@
                         <div class="about-us-info-wrap pt-30 pb-30">
                             <h1>About us</h1>
 
-                            <p align="justify" style="width: 650px; float: left">Vikram Roller Flour Mills Limited is a pioneer name in the Agro-products manufacturing, packaging, and delivery in India. The company specializes in manufacturing supreme quality wheat products that are consumed by top-level
-                                bakers, caterers and FMCG suppliers in the country. Vikram Mills product line includes and is not limited to Wheat Flour (Atta), White Flour (Maida), Rawa, Semolina (Suji), Broken Wheat (Dalia) and Bran (Chokar). Counted
-                                amongst top-quality Agro-products enterprises in India, Vikram roller flour mills proudly caters to many legacy clients including Parle, Britannia, Reliance, Haldiram, Tops, Frontier, Roseate House, Crowne Plaza Hotels,
-                                and many other recognized FMCG retailers.</p>
-                            <img src="img/bg/about1.jpg" alt="Banner Image" class="about-images">
+                            <p align="justify" style="width: 650px; float: left">{{ $about->about_content }}</p>
+                            <img src="{{ url('public/img/about') }}/{{ $about->about_pic ?? ''  }}" alt="Banner Image" class="about-images">
 
                         </div>
                     </div>
@@ -110,11 +107,10 @@
                         <div class="about-us-info-wrap pt-30 pb-30">
                             <h1>Our History</h1>
 
-                            <p align="justify" style="width: 650px; float: right">Founded in 1973 in New Delhi, Vikram roller flour mills has sustained constant growth since then. In this remarkable journey of more than four decades, the company has marked its presence in the market with its unparalleled
-                                commitment towards quality and excellent business relations, making it the most sought-after brand in the Agro FMCG segment. It is the company's grand vision and mission statements that have propelled vikram roller flour
-                                mills to where it stands today. The credit for the success accumulated in the glorious past years can be rightly given to the wise values of the management that are laser-focused on business ethics, quality standards, and
-                                unmatched Customer satisfaction.</p>
-                            <img src="img/bg/about2.jpg" alt="Banner Image" class="about-images1">
+                            <p align="justify" style="width: 650px; float: right">
+                        {{ $about->our_history_content }}      
+                        </p>
+                            <img src="{{ url('public/img/about') }}/{{ $about->our_history_pic ?? ''  }}" alt="Banner Image" class="about-images1">
 
                         </div>
                     </div>
@@ -123,14 +119,9 @@
                         <div class="about-us-info-wrap pt-30 pb-30">
                             <h1>The Brand</h1>
 
-                            <p align="justify" style="width: 650px; float: left">'INDIA GATE,' the flagship brand of vikram roller flour mills has already become an insignia of quality and trust in the agro-products market. Sporting a great end-to-end network of supply chain, this brand has become a 'go-to'
-                                choice for major retailers in the local as well as the national market. Vikram roller flour mills produces all the wheat-based products under this brand name, acting as a crucial step in forging the market identity and
-                                name recognition of the company.
-                                <br>
-                                <br> Vikram roller flour mills name has now become synonymous with quality. The company holds all the required certifications needed for the FMCG industry, making it stand out from the crowd of other retail players of wheat
-                                players in India. The company holds FSSAI and ISO certifications reflecting the strict adherence to standards and parameters set by the government.
-                            </p>
-                            <img src="img/bg/about3.jpg" alt="Banner Image" class="about-images">
+                            <p align="justify" style="width: 650px; float: left">{{ $about->brand_content }}</p>
+                            
+                            <img src="{{ url('public/img/about') }}/{{ $about->brand_pic ?? ''  }}" alt="Banner Image" class="about-images">
 
                         </div>
                     </div>
@@ -139,18 +130,7 @@
                         <div class="about-us-info-wrap pt-30 pb-30">
                             <h1>Why Choose us</h1>
 
-                            <p align="justify">Our professional ethics, ultra-pure product quality and willingness to form long-term business relations are the key reasons for you to form a long-lasting business partnership with us. Vikram roller flour mills is famed for<br><strong>Finest
-                                    Quality:</strong> Be it any wheat-based product, our quality sometimes even exceeds the prescribed government standards in many instances. Our employees, mill workers, and senior management are very quality-sensitive
-                                when it comes to processing, producing, packaging and delivering the final product.<br>
-                                <strong>Automated Equipment:</strong> It would only be fair to say that we are consistently able to maintain our renowned product quality with the aid of the latest machines and equipment. Automation has helped us achieve
-                                precision, efficiency and boosted production capability.
-                                <br>
-                                <strong>Legacy Clientele:</strong> Vikram roller flour mills has scored renowned industry giants as its clients. Brands like Parle, Britannia, Priyagold, Tops, etc. get a constant supply of our products. We would like to
-                                add you as an esteemed client in our portfolio as well.
-                                <br>
-                                <strong>Growing player in the market:</strong> We were emerging a few decades back, now we are growing. Our brand 'India Gate' has established its market presence and has since maintained a stronghold. Thanks to the company's
-                                values, strategy, and ethics, Vikram roller flour mills is one of the fastest growing enterprises in this segment.
-                            </p>
+                            <p align="justify">{{  $about->why_choose_us_content }}</p>
 
                         </div>
                     </div>
@@ -165,7 +145,10 @@
         <!-- ABOUT US AREA END -->
 
         <!-- OUR HISTORY AREA START -->
-        <div class="col-lg-12" style="background:url('img/bg/about-middel.jpg') center; height: 750px;">
+        @php
+         $pic =  url('public/img/about'). '/' . $about->pic_after_why_choose_us_content ;
+        @endphp
+        <div class="col-lg-12" style="background:url('{{$pic}}') center; height: 750px;">
             <div class="container">
                 <div>
 
@@ -182,8 +165,7 @@
                         <div class="about-us-info-wrap pt-30 pb-30 col-lg-10" style="left:80px;">
 
                             <h1 class="vission">Our Vission</h1>
-                            <p style="color:white">Is to gain recognition in the FMCG agro-products market by delivering products of finesse quality to the people, and contribute not just to their nutrition, but also enhance their quality of life. Vikram roller flour mills
-                                holds a crystal clear vision to cater to the young and growing population of India with the pristine processed-wheat products, and be recognized as the go-to brand for the quality products we deliver.</p>
+                            <p style="color:white">{{  $about->our_vision_content }}</p>
 
                         </div>
                     </div>
@@ -192,10 +174,7 @@
                         <div class="about-us-img-wrap about-img-right">
 
                             <h1 class="mission">Our Mission</h1>
-                            <p style="color:white; font-size: 16px;">With a strong workforce that shares a common vision, Vikram roller flour mills is on a mission to contribute not just to the end customer and clients, but also to the Indian farming ecosystem that acts as the primary movers
-                                of this industry. We aim to contribute to the Indian economy, ensure a healthy staple diet for the people, and build our vision brick by brick. While manufacturing supreme wheat agro-products is our passion, we also ensure
-                                our participation in activities aligned towards the betterment of humanity, nation, and our society as a collective.
-                            </p>
+                            <p style="color:white; font-size: 16px;">{{  $about->our_mission }}</p>
 
                         </div>
                     </div>
@@ -439,19 +418,8 @@
                         <div class="about-us-info-wrap pt-30 pb-30">
                             <h1>Our Management</h1>
 
-                            <p align="justify" style="width: 650px; float: left">The year 2010 witnessed the transformation of the company's management with Shri Pawan Kumar Gupta taking command of the vikram roller flour mills operations and delivery as the new Managing Director. Mr. Gupta is a recognized
-                                visionary amongst his peers and professional network, especially known for his generous and philanthropic nature. He is a passionate second-generation businessman possessing a rich professional experience of more than three
-                                decades in Commodity Market and Trading Business.
-                                <br>
-                                <br> Shri Pawan Kumar Gupta transformed the vikram roller flour mills plant into a fully automatic setup that requires no human intervention. The entire process right from the beginning, i.e, washing, grinding to the end
-                                stage of packaging is automated. Mr. Gupta's philosophy behind this step was to increase the plant's production capacity while boosting the efficiency and reducing wastage. Also, a noble thought behind the automation of
-                                the Milling machinery was that the employees and the workers function under much more safer conditions than any other plant.
-                                <br>
-                                <br> Recently, Mr. Shubham Gupta, son of Mr. Pawan Kumar Gupta joined the top management crew as the new Marketing Head. Graduated from Australia with a specialization in Marketing, Mr. Shubham drives all the Marketing
-                                decisions with his innovative and creative ideas. Vikram roller flour mills found a new branding spark when Shubham introduced the new packaging designs and brought vikram roller flour mills into retail, which earlier was
-                                entirely focused on B2B sales.
-                            </p>
-                            <img src="images/management.jpg" alt="Banner Image" class="about-images">
+                            <p align="justify" style="width: 650px; float: left">{{ $about->our_management_content }}</p>
+                            <img src="{{ url('public/img/about') }}/{{ $about->our_management_pic ?? ''  }}" alt="Banner Image" class="about-images">
 
                         </div>
                     </div>

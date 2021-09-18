@@ -19,7 +19,7 @@
             <div class="ltn__product-tab-area pt-30">
               <div class="container">
                 @if (Session::has('success'))
-                  <div class="alert alert-success">
+                  <div class="alert alert-success text-left">
                     {{ Session::get('success') }}
                   </div>
                 @endif
@@ -50,7 +50,7 @@
                             </div>
                             @if (Session::has('error'))
                             <div class="col-md-12">
-                              <div class="alert alert-danger text">
+                              <div class="alert alert-danger text-left">
                                 {{ Session::get('error') }}
                               </div>
                             </div>

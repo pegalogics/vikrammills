@@ -6,7 +6,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">All Products</h1>
+          <h1 class="m-0">About Us page</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -24,11 +24,9 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            
             <div class="card card-secondary">
                 <div class="card-header">
-                    <h3 class="card-title">Add New Product</h3>
-                    <a href="{{ url('admin/products')}}" class="btn btn-primary btn-sm float-right">View All</a>
+                    <h3 class="card-title">About us page</h3>
                 </div>
                 <div class="card-body">
                      @if (Session::has('success'))
@@ -42,65 +40,127 @@
                       </div>
                     @endif
                     
-                    <form action="{{ url('admin/products') }}" method='post' enctype='multipart/form-data'>
+                    <form action="{{ route('aboutAdmin.store')}}" method='post' enctype='multipart/form-data'>
                       @csrf
                       <div class="form-group">
-                        <p style='text-align:left;' for="photo"> Photo</p>
-                        <input type="file" class="form-control mb-2" id="photo" name="file" required>
-                       </div>
-                       <div class='output'></div>
-                       
-                      <div class="form-group">
-                        <p style='text-align:left;' class='text-dark' for="name">Item Name</p>
-                        <input  type="text"  name='name' class="form-control mb-2" id="name" placeholder="Enter Item Name" required>
-                      </div>
-                      <div class="form-group">
-                         
-                        <p style='text-align:left;' for="category">Category</p>
-                        <select class="form-control mb-2" id="category" name="category">
-                            @foreach ($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                            @endforeach
-                        </select>
-                         
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-md-3 col-6">
-                            <p style='text-align:left;' class='text-dark' for="weight">Weight</p>
-                            <input  type="text"  name='weight' class="form-control mb-2" id="weight" placeholder="Enter Item Weight" required>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <p style='text-align:left;' class='text-dark' for="price">Price</p>
-                            <input  type="number"  name='price' class="form-control mb-2" id="price" placeholder="Enter Item Price" required>
-                        </div>
-                        <div class="col-md-3 col-6">
-                            <p style='text-align:left;' class='text-dark' for="discount">Discount</p>
-                            <input  type="number"  name='discount' class="form-control mb-2" id="discount" placeholder="Enter Item Discount" required>
-                        </div>
-                        <div class="col-md-3 col-6">
-                              <p style='text-align:left;' for="quantity">Quantity</p>
-                              <input  type="number"  name='quantity' class="form-control mb-2" id="quantity" placeholder="Enter Quantity" required>
+                        <p style='text-align:left;' for="photo"> Banner</p>
+                        <input type="file" class="form-control-file mb-2" id="photo" name="about_banner" require>
+                          <div class='output'>
+                          <img src="{{ url('public/img/about') }}/{{ $about->about_banner ?? '' }}" alt="about_banner" class="img-thumbnail img-fluid" style='max-width:300px'>
                           </div>
-                      </div>
-                      
-                      <div class="form-group">
-                           <p style='text-align:left;' class='text-dark'>Product Details 1</p>
-                           <textarea id="productdetails" name="description" class="form-control" style="height: 200px"></textarea>
                        </div>
-                      <div class="form-group">
-                           <p style='text-align:left;' class='text-dark'>Product Details 2</p>
-                           <textarea id="productdetails2" name="description2" class="form-control" style="height: 200px"></textarea>
-                       </div>
+          
+                     
                        
+                      
+                       <!-- about us content -->
+                       <div class="form-group">
+                         <p style="text-align:left;">About us content</p>
+                         <textarea class="form-control" rows="3" id="about" name="about_content"  require>{{ $about->about_content }}</textarea>
+                       </div>
+
+
+                       <!-- about us pic -->
+                       <div class="form-group">
+                         <p style="text-align:left;">About us pic</p>
+                         <input type="file" class="form-control-file mb-2" id="about_pic" name="about_pic" require>
+                          <div class='output'>
+                            <img src="{{ url('public/img/about') }}/{{ $about->about_pic ?? ''  }}" alt=""about_pic" class="img-thumbnail img-fluid" style='max-width:300px'>
+                          </div>
+                        </div>
+
+                       <!-- our_history_content -->
+                       <div class="form-group">
+                         <p style="text-align:left;">Our History content</p>
+                         <textarea class="form-control" rows="3" id="our_history" name="our_history_content" require>{{ $about->our_history_content }}</textarea>
+                       </div>
+
+                       <!-- our_history_pic -->
+                       <div class="form-group">
+                         <p style="text-align:left;">Our History pic</p>
+                         <input type="file" class="form-control-file mb-2" id="our_history_pic" name="our_history_pic" require>
+                         <div class='output'>
+                              <img src="{{ url('public/img/about') }}/{{ $about->our_history_pic ?? ''  }}" alt=""our_history_pic" class="img-thumbnail img-fluid" style='max-width:300px'>
+                         </div>
+                        </div>
+
+                        <!-- brand_content -->
                       <div class="form-group">
-                        <p style='text-align:left;' class='text-dark' for="status">Status</p>
-                        <select  name='status' class="form-control mb-2" id="status" required>
-                            <option value="1">In-Stock</option>
-                            <option value="0">Out of Stock</option>
-                        </select>
+                        <p style='text-align:left;'>Brand content</p>
+                        <textarea class="form-control" rows="3" id="brand" name="brand_content" require> {{ $about->brand_content }}</textarea>
+                      </div>
+
+                      <!-- brand_pic -->
+                      <div class="form-group">
+                        <p style='text-align:left;'>Brand pic</p>
+                        <input type="file" class="form-control-file mb-2" id="brand_pic" name="brand_pic" require>
+                        <div class='output'>
+                            <img src="{{ url('public/img/about') }}/{{ $about->brand_pic ?? ''  }}" alt=""brand_pic" class="img-thumbnail img-fluid" style='max-width:300px'>
+                        </div>
+                      </div>
+
+                      <!-- why_choose_us_content -->
+                      <div class="form-group">
+                        <p style='text-align:left;'>Why choose us content</p>
+                        <textarea class="form-control" rows="3" id="why_choose_us" name="why_choose_us_content" require> {{  $about->why_choose_us_content }}</textarea>
+                      </div>
+
+                      <!-- pic_after_why_choose_us_content -->
+                      <div class="form-group">
+                        <p style='text-align:left;'>Pic after why choose us content</p>
+                        <input type="file" class="form-control-file mb-2" id="pic_after_why_choose_us_content" name="pic_after_why_choose_us_content" require>
+                        <div class='output'>
+                            <img src="{{ url('public/img/about') }}/{{ $about->pic_after_why_choose_us_content ?? ''  }}" alt=""pic_after_why_choose_us_content" class="img-thumbnail img-fluid" style='max-width:300px'>
+                        </div>
+                      </div>
+
+                      <!-- our_vision_content -->
+                      <div class="form-group">
+                        <p style='text-align:left;'>Our Vision content</p>
+                        <textarea class="form-control" rows="3" id="our_vision" name="our_vision_content" require> {{  $about->our_vision_content }}</textarea>
+                      </div>
+
+                      <!-- our_vision_background -->
+                      <!-- <div class="form-group">
+                        <p style='text-align:left;'>Our Vision background</p>
+                        <input type="file" class="form-control-file mb-2" id="our_vision_background" name="our_vision_background" require>
+                        <div class='output'>
+                            <img src="{{ url('public/img/about') }}/{{ $about->our_vision_background ?? ''  }}" alt="our_vision_background" class="img-thumbnail img-fluid" style='max-width:300px'>
+                        </div>
+                      </div> -->
+
+
+                      <!-- our_mission -->
+                      <div class="form-group">
+                        <p style='text-align:left;'>Our Mission</p>
+                        <textarea class="form-control" rows="3" id="our_mission" name="our_mission" require> {{  $about->our_mission }}</textarea>
+                      </div>
+
+                      <!-- our_mission_background -->
+                      <!-- <div class="form-group">
+                        <p style='text-align:left;'>Our Mission background</p>
+                        <input type="file" class="form-control-file mb-2" id="our_mission_background" name="our_mission_background" require>
+                        <div class='output'>
+                            <img src="{{ url('public/img/about') }}/{{ $about->our_mission_background ?? ''  }}" alt=""our_mission_background" class="img-thumbnail img-fluid" style='max-width:300px'>
+                        </div>
+                      </div> -->
+
+                      <!-- our_management_content -->
+                      <div class="form-group">
+                        <p style='text-align:left;'>Our Management content</p>
+                        <textarea class="form-control" rows="3" id="our_management" name="our_management_content" require> {{ $about->our_management_content }}</textarea>
+                      </div>
+
+                      <!-- our_management_pic -->
+                      <div class="form-group">
+                        <p style='text-align:left;'>Our Management pic</p>
+                        <input type="file" class="form-control-file mb-2" id="our_management_pic" name="our_management_pic" require>
+                        <div class='output'>
+                            <img src="{{ url('public/img/about') }}/{{ $about->our_management_pic ?? ''  }}" alt=""our_management_pic" class="img-thumbnail img-fluid" style='max-width:300px'>
+                        </div>
                       </div>
                       
-                      <button type="submit" class="btn btn-success float-right"><i class="fa fa-plus"></i> Save an Item</button>
+                      <button type="submit" class="btn btn-success float-right"><i class="fa fa-plus"></i> Update</button>
                     </form>
                 </div>
             </div>

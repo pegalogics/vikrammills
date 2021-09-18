@@ -31,7 +31,7 @@
                     <div class="about-us-info-wrap pt-30 pb-30">
                        
                         <h1>About us</h1>
-                        <p>Vikram Roller Flour Mills Limited is among the pioneers of Agro-products manufacturing, specialized in the best quality of wheat products manufacturing. Vikram roller flour mills were incepted four decades back in 1973 in National Capital – New Delhi. In these glorious 46 years, the company has grown as one of the leading manufacturing of wheat products like – Wheat Flour (Atta), White Flour (Maida), Semolina (Suji), Bran (Chokar) and Broken Wheat (Dallia), etc. <a href="about.html" class="btn btn-link">- Read More</a></p>
+                        <p>Vikram Roller Flour Mills Limited is among the pioneers of Agro-products manufacturing, specialized in the best quality of wheat products manufacturing. Vikram roller flour mills were incepted four decades back in 1973 in National Capital – New Delhi. In these glorious 46 years, the company has grown as one of the leading manufacturing of wheat products like – Wheat Flour (Atta), White Flour (Maida), Semolina (Suji), Bran (Chokar) and Broken Wheat (Dallia), etc. <a href="{{route('about.index')}}" class="btn btn-link">- Read More</a></p>
 
                       
                     </div>

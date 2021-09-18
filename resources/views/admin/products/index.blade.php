@@ -169,8 +169,8 @@
                                           <div class="form-group">
                                             <p style='text-align:left;' for="photo"> Photo</p>
                                             <input type="file" class="form-control mb-2" id="photo" name="file" required>
+                                            <div class='output'></div>
                                            </div>
-                                           <div class='output'></div>
                                            
                                           <div class="form-group">
                                             <p style='text-align:left;' class='text-dark' for="name">Item Name</p>
@@ -291,8 +291,8 @@
           <div class="form-group">
             <p style='text-align:left;' for="photo"> Photo</p>
             <input type="file" class="form-control mb-2" id="photo" name="file" required>
+            <div class='output'></div>
            </div>
-           <div class='output'></div>
            
           <div class="form-group">
             <p style='text-align:left;' class='text-dark' for="name">Item Name</p>

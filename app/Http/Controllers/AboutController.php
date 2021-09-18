@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use Illuminate\Http\Request;
 
+//For customer site
 class AboutController extends Controller
 {
     /**
@@ -14,10 +15,9 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $about = About::all();
-        return view('pages.about', compact('about'));
+            $about = About::first();
+            return view('pages.about', ['about' => $about]);
     }
-
     /**
      * Show the form for creating a new resource.
      *

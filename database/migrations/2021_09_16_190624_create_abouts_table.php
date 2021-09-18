@@ -15,22 +15,22 @@ class CreateAboutsTable extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
-            $table->string('head_pic');
-            $table->string('about_us_content');
-            $table->string('about_us_pic');
-            $table->string('out_history_content');
-            $table->string('our_history_pic');
-            $table->string('brand_content');
-            $table->string('brand_pic');
-            $table->string('why_choose_us_content');
-            $table->string('pic_after_why_choose_us_content');
-            $table->string('our_vision_content');
-            $table->string('our_vision_background');
-            $table->string('our_mission');
-            $table->string('our_mission_background');
-            $table->string('our_management_content');
-            $table->string('our_management_pic');
-            $table->integer('gallery_id');
+            $table->longText('about_banner')->nullable();
+            $table->longText('about_content')->nullable();
+            $table->string('about_pic')->nullable();
+            $table->longText('our_history_content')->nullable();
+            $table->string('our_history_pic')->nullable();
+            $table->longText('brand_content')->nullable();
+            $table->string('brand_pic')->nullable();
+            $table->longText('why_choose_us_content')->nullable();
+            $table->longText('pic_after_why_choose_us_content')->nullable();
+            $table->longText('our_vision_content')->nullable();
+            $table->string('our_vision_background')->nullable();
+            $table->longText('our_mission')->nullable();
+            $table->string('our_mission_background')->nullable();
+            $table->longText('our_management_content')->nullable();
+            $table->string('our_management_pic')->nullable();
+            $table->integer('gallery_id')->nullable();
             $table->timestamps();
         });
     }
