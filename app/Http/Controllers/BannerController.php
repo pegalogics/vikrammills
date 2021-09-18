@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
-use App\Models\Category;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class BannerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('product',['products' => Product::all(), 'categories' => Category::all()]);
-
+        $banner = Banner::first();
+        return view('admin.pages.banner',['banner' => $banner]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -37,7 +37,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            $banner = Banner::updateOrCreate(['id' => 1], $request->all());
+            $file = $request->file('banner');
+            $filename = 'banner.jpg';
+            $file->move('public/img', $filename);
+            $banner->banner = $filename;
+            $banner->save();
+            return redirect()->route('banner.index');
     }
 
     /**

@@ -185,7 +185,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('banner.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Manage Banner</p>
                 </a>
@@ -197,7 +197,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('aboutAdmin.index')}}" class="nav-link">
+                <a href="{{route('about.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>About Page</p>
                 </a>

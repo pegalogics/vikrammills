@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\BannerController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
@@ -46,8 +48,9 @@ Route::get('/profile/edit/{id}',[UserController::class,'edit']);
 //add to cards
 Route::post('/profile/{customer_id}/add-to-cards{product_id}',[UserController::class,'addToCards']);
 
-//Pages
-Route::resource('about',AboutController::class);
+
+Route::get('about',[AboutController::class,'index_customers'])->name('customer.about');
+Route::resource('product',ProductController::class);
 
 
 
@@ -97,10 +100,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     //END Testimonial
 
     // Pages
-    Route::resource('aboutAdmin', AboutAdminController::class);
+    Route::resource('about', AboutController::class);
 
 
     Route::get('admin/logout',[AdminController::class, 'adminlogout']);
+
+    Route::resource('banner',BannerController::class);
 
 });
 // Route::get('/', function () {

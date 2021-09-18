@@ -52,9 +52,9 @@
                             <h4 class="footer-title">Quick View</h4>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="{{route('about.index')}}">About</a></li>
+                                    <li><a href="{{route('customer.about')}}">About</a></li>
                                     <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="product.html">Products</a></li>
+                                    <li><a href="{{route('product.index')}}">Products</a></li>
 									<li><a href="#">Certification</a></li>
                                     <li><a href="contact.html">Contact us</a></li>
                                   
