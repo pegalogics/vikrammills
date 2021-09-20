@@ -40,7 +40,7 @@ class BannerController extends Controller
             $banner = Banner::updateOrCreate(['id' => 1], $request->all());
             $file = $request->file('banner');
             $filename = 'banner.jpg';
-            $file->move('public/img', $filename);
+            $file->move('uploads/banner ', $filename);
             $banner->banner = $filename;
             $banner->save();
             return redirect()->route('banner.index');

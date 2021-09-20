@@ -118,7 +118,7 @@
                         Email
                       </th>
                       <th>
-                        Mobile
+                        mobile
                       </th>
                       <th>
                         Address
@@ -266,6 +266,9 @@
                                         class="button button-primary form-control mb-2"
                                         id="photo"
                                         name="file">
+                                       <div class='output'>
+                                         <img src="{{ url('uploads/slider') }}/{{ $slider1 ?? ''  }}" alt=""slider1" class="img-thumbnail img-fluid" style='max-width:300px'>
+                                                                                             </div>
                                     </div>
                                     <div
                                       class='Customer'>
@@ -308,12 +311,12 @@
                                     class="form-group">
                                       <p style='text-align:left;'
                                       for="mobile">
-                                      Mobile*
+                                      mobile*
                                       </p>
                                       <input
                                       type="text"
                                       class="form-control"
-                                      name="tel"
+                                      name="mobile"
                                       value="{{ $customer->mobile }}"
                                       required>
                                     </div>  

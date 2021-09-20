@@ -1,9 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CustomerAccount;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\ProductController;
@@ -11,8 +14,11 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AboutAdminController;
+use App\Http\Controllers\ClientlogoController;
+use App\Http\Controllers\ContactPageController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\ContactSubmitsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,15 +55,26 @@ Route::get('/profile/edit/{id}',[UserController::class,'edit']);
 Route::post('/profile/{customer_id}/add-to-cards{product_id}',[UserController::class,'addToCards']);
 
 
-Route::get('about',[AboutController::class,'index_customers'])->name('customer.about');
+Route::get('about',[AboutController::class,'index_customer'])->name('customer.about');
+
+//For submitting contact form by customer
+Route::get('contact',[ContactPageController::class,'index_customer'])->name('customer.contact');
+Route::post('contact',[ContactSubmitsController::class,'mail'])->name('contact.mail');
+
+
+
+Route::get('blog',[BlogController::class,'index_customer'])->name('customer.blog');
 Route::resource('product',ProductController::class);
 
 
 
-Route::group(['prefix' => 'customer', 'middleware' => ['authentication']], function () {
-
-
+Route::group([
+          'prefix' => 'customer', 
+            //  'middleware' => ['authentication']
+    ], function () {
+    Route::resource('account',CustomerAccount::class);
 });
+
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     //Dashboard
@@ -99,14 +116,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     Route::any('/testimonial/delete/{id}',[TestimonialController::class, 'delete']);
     //END Testimonial
 
+    //for showing contact details of customers
+    Route::resource('contactSubmits',ContactSubmitsController::class);
     // Pages
-    Route::resource('about', AboutController::class);
-
-
-    Route::get('admin/logout',[AdminController::class, 'adminlogout']);
-
-    Route::resource('banner',BannerController::class);
-
+    Route::group(['prefix' => 'pages'],function(){
+        Route::resource('about', AboutController::class);
+        Route::resource('banner', BannerController::class);
+        Route::resource('home', HomeController::class);
+        Route::resource('clientlogo', ClientlogoController::class);
+        Route::resource('contactPage', ContactPageController::class);
+    });
+    Route::get('admin/logout', [AdminController::class, 'adminlogout']);
 });
 // Route::get('/', function () {
 //     return view('welcome');

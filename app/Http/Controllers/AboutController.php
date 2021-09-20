@@ -12,7 +12,7 @@ class AboutController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index_customers()
+    public function index_customer()
     {
             $about = About::first();
             return view('about', ['about' => $about]);
@@ -54,50 +54,50 @@ class AboutController extends Controller
         if ($request->hasFile('about_banner')) {
             $file = $request->file('about_banner');
             $filename = 'about_banner.jpg';
-            $file->move('public/img/about', $filename);
+            $file->move(public_path('uploads/about'), $filename);
             $about->about_banner = $filename;
             
         }
         if($request->hasFile('about_pic')){
             $file = $request->file('about_pic');
             $filename = 'about_pic.jpg';
-            $file->move('public/img/about', $filename);
+            $file->move(public_path('uploads/about'), $filename);
             $about->about_pic = $filename;
         }
         if ($request->hasFile('our_history_pic')) {
             $file = $request->file('our_history_pic');
             $filename = 'our_history_pic.jpg';
-            $file->move('public/img/about', $filename);
+            $file->move(public_path('uploads/about'), $filename);
             $about->our_history_pic = $filename;
         }
         if ($request->hasFile('brand_pic')) {
             $file = $request->file('brand_pic');
             $filename = 'brand_pic.jpg';
-            $file->move('public/img/about', $filename);
+            $file->move(public_path('uploads/about'), $filename);
             $about->brand_pic = $filename;
         }
         if ($request->hasFile('pic_after_why_choose_us_content')) {
             $file = $request->file('pic_after_why_choose_us_content');
             $filename = 'pic_after_why_choose_us_content.jpg';
-            $file->move('public/img/about', $filename);
+            $file->move(public_path('uploads/about'), $filename);
             $about->pic_after_why_choose_us_content = $filename;
         }
         if ($request->hasFile('our_vision_background')) {
             $file = $request->file('our_vision_background');
             $filename = 'our_vision_background.jpg';
-            $file->move('public/img/about', $filename);
+            $file->move(public_path('uploads/about'), $filename);
             $about->our_vision_background = $filename;
         }
         if ($request->hasFile('our_mission_background')) {
             $file = $request->file('our_mission_background');
             $filename = 'our_mission_background.jpg';
-            $file->move('public/img/about', $filename);
+            $file->move(public_path('uploads/about'), $filename);
             $about->our_mission_background = $filename;
         }
         if ($request->hasFile('our_management_pic')) {
             $file = $request->file('our_management_pic');
             $filename = 'our_management_pic.jpg';
-            $file->move('public/img/about', $filename);
+            $file->move(public_path('uploads/about'), $filename);
             $about->our_management_pic = $filename;
         }
         return $about;

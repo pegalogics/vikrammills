@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class ContactsTableSeeder extends Seeder
+class ContactSubmitsTableSeeder extends Seeder
 {
 
     /**
@@ -16,7 +16,7 @@ class ContactsTableSeeder extends Seeder
     {
         
 
-        \DB::table('contacts')->delete();
+        \DB::table('contact_submits')->delete();
         
         
         

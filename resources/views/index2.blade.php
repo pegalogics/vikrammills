@@ -9,19 +9,24 @@
             <!-- ltn__slide-item -->
             <div class="ltn__slide-item section-bg-1">
                 <div class="ltn__slide-item-inner">
-					<img src="images/vikram-mills-banner.webp" alt="Image">
+					<img src="{{ url('uploads/slider') }}/{{ $slider1 ?? ''  }}" alt="Image">
                     
                 </div>
             </div>
             <!-- ltn__slide-item -->
             <div class="ltn__slide-item section-bg-1">
                 <div class="ltn__slide-item-inner">
-                  <img src="images/about-middel.jpg" alt="Image">
+                  <img src="{{ url('uploads/slider') }}/{{ $slider2 ?? ''  }}" alt="Image">
+                </div>
+            </div>
+            <div class="ltn__slide-item section-bg-1">
+                <div class="ltn__slide-item-inner">
+                  <img src="{{ url('uploads/slider') }}/{{ $slider3 ?? ''  }}" alt="Image">
                 </div>
             </div>
         </div>
     </div>
-    <!-- SLIDER AREA END -->
+    <!-- SLIDER AREA END -->    
 
     <!-- ABOUT US AREA START -->
     <div class="ltn__about-us-area pb-120">
@@ -31,7 +36,7 @@
                     <div class="about-us-info-wrap pt-30 pb-30">
                        
                         <h1>About us</h1>
-                        <p>Vikram Roller Flour Mills Limited is among the pioneers of Agro-products manufacturing, specialized in the best quality of wheat products manufacturing. Vikram roller flour mills were incepted four decades back in 1973 in National Capital – New Delhi. In these glorious 46 years, the company has grown as one of the leading manufacturing of wheat products like – Wheat Flour (Atta), White Flour (Maida), Semolina (Suji), Bran (Chokar) and Broken Wheat (Dallia), etc. <a href="{{route('about.index')}}" class="btn btn-link">- Read More</a></p>
+                        <p>{{ $about_content }}} <a href="{{route('customer.about')}}" class="btn btn-link">- Read More</a></p>
 
                       
                     </div>
@@ -52,9 +57,9 @@
 						<br>
 
                         <h1 class="section-title-product">Products</h1>
-						<h4 style="color: aliceblue">You can buy the following assured quality products from us</h4>
+						<h4 style="color: aliceblue">{{ $product_title}}</h4>
 
-						<p style="color: aliceblue;">With a wave of digitization and modernization, Vikram rollar flour mills has made it easier than ever to place orders. You can place the order in any quantity for the following products.</p>
+						<p style="color: aliceblue;">{{$product_description}}</p>
                         
                     </div>
                 </div>
@@ -214,7 +219,7 @@
                 <div class="col-lg-8 col-md-8 col-sm-9">
                     <div class="call-to-action-inner benefits ">
                         <h1>Benefits of Product</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>{{ $benefits_description }}</p>
                         <div class="btn-wrapper">
                             <a class="theme-btn-1 btn btn-effect-1 text-uppercase" href="product.html">View More</a>
                         </div>
@@ -276,7 +281,7 @@
                     <div class="section-title-area text-center"><br>
 						<br>
 						<h1>Testimonial</h1>
-                        <p>There are many variations of passages of Lorem Ipsum available.</p>
+                        <p>{{$testimonial_description}}</p>
                     </div>
                 </div>
             </div>
@@ -284,6 +289,7 @@
 			
 			 <div class="row  ltn__testimonial-item-4 ltn__testimonial-slider-2-active slick-arrow-1 slick-arrow-1 content-center">
                 <!-- ltn__testimoial-item -->
+
                 @foreach($testimonials as $testimonial)
                 <div class="col-12">
                     <div class="ltn__product-item ltn__product-item-3" style="padding: 5px;">

@@ -1,5 +1,5 @@
          <!-- BREADCRUMB AREA START -->
-        <div class="ltn__breadcrumb-area ltn__breadcrumb-area-4 bg-overlay-theme-10--- bg-image" data-bg="{{ url('public/img') }}/{{ $banner->banner ?? '' }}">
+        <div class="ltn__breadcrumb-area ltn__breadcrumb-area-4 bg-overlay-theme-10--- bg-image" data-bg="{{ url('uploads/banner') }}/{{ $banner->banner ?? '' }}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">

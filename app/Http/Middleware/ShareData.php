@@ -3,11 +3,11 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\Models\Banner;
-
-use App\Models\Product;
 use Illuminate\Http\Request;
 
+use App\Models\Banner;
+use App\Models\Product; 
+use App\Models\Clientlogo;
 
 class ShareData
 {
@@ -23,6 +23,7 @@ class ShareData
 
         view()->share('products', Product::all());
         view()->share('banner', Banner::first());
+        view()->share('clientlogo' ,Clientlogo::first());
         return $next($request);
     }
 }

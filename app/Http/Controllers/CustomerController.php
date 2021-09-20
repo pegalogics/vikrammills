@@ -14,6 +14,7 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // for viewing on admin panel
     public function index()
     {
         return view('admin.customer',['customers' => User::all()]);
@@ -72,6 +73,10 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if(isset($request->firstname)){
+            $request->name = $request->firstname . ' ' . $request->lastname;
+        }
+
         //validation 
         $user = User::find($id);
         $current_email = $user->email;
@@ -98,6 +103,8 @@ class CustomerController extends Controller
         else{
             $customer->email = $current_email;
         }
+        
+        $customer->name = $request->name;
         $customer->mobile = $request->mobile;
         $customer->address = $request->address;
         $customer->city  = $request->city;
@@ -107,7 +114,7 @@ class CustomerController extends Controller
         $customer->ip =  $request->ip;
         $customer->status = $request->status;
         $customer->save();
-        return redirect()->route('customers.index')->with('success','Customer updated successfully');
+        return back()->with('success','Customer updated successfully');
     }
 
     /**

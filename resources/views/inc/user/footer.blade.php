@@ -6,7 +6,7 @@
                         <div class="footer-widget footer-about-widget">
                             <div class="footer-logo">
                                 <div class="site-logo">
-                                    <img src="images/logo.png" alt="Logo">
+                                    <img src="{{ url('uploads/clientlogo') }}/{{ $clientlogo->clientlogo ?? ''  }}" alt="Logo">
                                 </div>
                             </div>
                             <div class="footer-address">
@@ -53,10 +53,10 @@
                             <div class="footer-menu">
                                 <ul>
                                     <li><a href="{{route('customer.about')}}">About</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="{{route('customer.blog')}}">Blog</a></li>
                                     <li><a href="{{route('product.index')}}">Products</a></li>
 									<li><a href="#">Certification</a></li>
-                                    <li><a href="contact.html">Contact us</a></li>
+                                    <li><a href="{{route('customer.contact')}}">Contact us</a></li>
                                   
                                 </ul>
                             </div>

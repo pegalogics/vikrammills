@@ -15,7 +15,7 @@ class TestimonialController extends Controller
         //insert into testimonial
          $file = $request->file('file');
         if ($file !== null) {
-            $file_path = $file->move(public_path(), $file->getClientOriginalName());
+            $file_path = $file->move(public_path('uploads/testimonials'), $file->getClientOriginalName());
         }
 
         $testimonial = new Testimonial;
@@ -33,7 +33,7 @@ class TestimonialController extends Controller
         // file upload
         $file = $request->file('file');
         if ($file !== null) {
-            $file_path = $file->move(public_path(), $file->getClientOriginalName());
+            $file_path = $file->move(public_path('uploads/testimonials'), $file->getClientOriginalName());
         }
 
         $testimonial = Testimonial::find($id);

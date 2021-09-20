@@ -15,7 +15,8 @@ class AdminController extends Controller
             
             //save file
             $file = $request->file('file');
-            $file_path = $file->move(public_path(), $file->getClientOriginalName());
+            
+            $file_path = $file->move(public_path('uploads/products'), $file->getClientOriginalName());
 
             $Product->pic = $file->getClientOriginalName();
             $Product->name = $request->name;
@@ -40,7 +41,7 @@ class AdminController extends Controller
             
             //save file
             $file = $request->file('file');
-            $file_path = $file->move(public_path(), $file->getClientOriginalName());
+            $file_path = $file->move(public_path('uploads/products'), $file->getClientOriginalName());
 
             $Product->pic = $file->getClientOriginalName();
             $Product->name = $request->name;
@@ -62,7 +63,7 @@ class AdminController extends Controller
     public function productEdit(Request $request, $id){
         $file = $request->file('file');
         if ($file !== null) {
-            $file_path = $file->move(public_path(), $file->getClientOriginalName());
+            $file_path = $file->move(public_path('uploads/products'), $file->getClientOriginalName());
         }
         $product = Product::findOrNew($id);
         $product->name = $request->name;

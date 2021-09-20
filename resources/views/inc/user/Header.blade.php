@@ -7,12 +7,19 @@
        <div class="ltn__header-top-area top-area-color-white">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-md-3" style="border: 1px solid #000;">
                         <div class="ltn__top-bar-menu">
-                           
+                           <div class="header-search-1-form">
+                                <form method="get"  action="#">
+                                    <input type="text" name="search" value="" placeholder="Pin Code"/>
+                                    <button type="submit">
+                                        <span><i class="icon-search"></i></span>
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-7">
                         <div class="top-bar-right text-right">
                             <div class="ltn__top-bar-menu">
                                 <ul>
@@ -35,18 +42,7 @@
                                         </div>
                                     </li>
 									 <li>
-                                        <!-- ltn__language-menu -->
-                                        <div class="ltn__drop-menu ltn__currency-menu ltn__language-menu">
-                                            <ul>
-                                                <li  style="top: 26px;">
-                                                   <form class="search" action="">
-  														<input type="text" placeholder="Search.." name="search2">
-													  	<button type="submit"><i class="fa fa-search"></i></button>
-													</form>
-                                                </li>
-												
-                                            </ul>
-                                        </div>
+                                        
                                     </li>
                                    
                                 </ul>
@@ -64,7 +60,7 @@
                 <div class="row">
                     <div class="col col-lg-2">
                         <div class="site-logo">
-                            <a href="{{url('index')}}"><img src="images/logo.png" alt="Logo"></a>
+                            <a href="{{url('index')}}"><img src="{{ url('uploads/clientlogo') }}/{{ $clientlogo->clientlogo ?? ''  }}" alt="Logo"></a>
                         </div>
                     </div>
 					<div class="col-lg-6 col"  >
@@ -72,7 +68,7 @@
                             <div>
 									
 								<form class="example" action="" style="margin:auto;max-width:550px">
-										<input type="text" placeholder="Search.." name="search2">
+									<input type="text" placeholder="Search.." name="search2">
 								  	<button type="submit"><i class="fa fa-search"></i></button>
 								</form>
 										
@@ -90,18 +86,18 @@
                                     <ul>
 										
                                         <li><a href="{{url('index')}}">Home</a></li>
-										  <li class="menu-icon"><a href="product.html">Product</a>
+										  <li class="menu-icon"><a href="{{ url('products') }}">Product</a>
                                             <ul class="mega-menu">
                                                 @foreach($products as $product)
                                                 <li>
                                                     <div class="menu-product-item">
                                                         <div class="menu-product-img">
-                                                            <a href="#"><img src={{url($product->pic)}} alt="#"></a>
+                                                            <a href="{{ url('product-detail/' . $product->id) }}"><img src={{url($product->pic)}} alt="{{$product->name}}"></a>
                                                         </div>
                                                         <div class="product-info">
                                                             <h2 class="product-title"><a href="#">{{$product->name}}</a></h2>
                                                             <div class="product-price">
-                                                                 @php 
+                                                                @php 
                                                                     $discount = intval($product->price) -  intval($product->discount);
                                                                 @endphp
                                                                 <span>&#x20B9; {{$discount}}</span>
@@ -178,7 +174,7 @@
         <div class="ltn__utilize-menu-inner ltn__scrollbar">
             <div class="ltn__utilize-menu-head">
                 <div class="site-logo aligncenter">
-                    <a href="{{url('index')}}"><img src="images/logo.png" alt="Logo"></a>
+                    <a href="{{url('index')}}"><img src="{{ asset('images/logo.png') }}" alt="Logo"></a>
                 </div>
                 <button class="ltn__utilize-close">×</button>
             </div>
@@ -193,15 +189,14 @@
                     <li><a href="{{url('index')}}">Home</a>
                  </li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="#">Product</a>
+                    <li><a href="{{ url('products') }}">Product</a>
                         <ul class="sub-menu">
                             <li><a href="shop.html">Tanduri Atta</a></li>
                             <li><a href="shop-grid.html">Maida </a></li>
                             <li><a href="shop-left-sidebar.html">Sooji</a></li>
                             <li><a href="shop-right-sidebar.html">Dalia</a></li>
                             <li><a href="#">Rawa</a></li>
-                            <li><a href="cart.html">Chakki Atta</a></li>
-                            <li><a href="wishlist.html">India Gate Bran </a></li>
+                            
                           
                         </ul>
                     </li>
@@ -260,5 +255,3 @@
     <!-- Utilize Mobile Menu End -->
 
     <div class="ltn__utilize-overlay"></div>
-
-    

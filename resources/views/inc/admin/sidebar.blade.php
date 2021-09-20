@@ -109,6 +109,12 @@
             </a>
             
           </li>
+          <li class="nav-item">
+            <a href="{{ route('contactSubmits.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>Contact records</p>
+            </a>
+          </li>
           
           <li class="nav-header">Action</li>
           <!-- <li class="nav-item">
@@ -185,13 +191,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="{{ route('clientlogo.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Client Logo</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{ route('banner.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Manage Banner</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{route('home.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Home Page</p>
                 </a>
@@ -209,7 +221,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('contactPage.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Contact Page</p>
                 </a>

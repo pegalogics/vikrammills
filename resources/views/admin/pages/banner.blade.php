@@ -46,7 +46,7 @@
                         <p style='text-align:left;' for="photo"> Banner</p>
                         <input type="file" class="form-control-file mb-2" id="photo" name="banner" require>
                           <div class='output'>
-                          <img src="{{ url('public/img') }}/{{ $banner->banner ?? 'banner.jpg' }}" alt="banner" class="img-thumbnail img-fluid" style='max-width:300px'>
+                          <img src="{{ url('uploads/banner') }}/{{ $banner->banner ?? 'banner.jpg' }}" alt="banner" class="img-thumbnail img-fluid" style='max-width:300px'>
                           </div>
                        </div>
                
