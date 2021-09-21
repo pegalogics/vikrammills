@@ -47,12 +47,19 @@ class ProductController extends Controller
         if ($request->isMethod('post')) {
             $Product = new Product();
             
-            //save file
-            $file = $request->file('file');
-            
-            $file_path = $file->move(public_path('uploads/products'), $file->getClientOriginalName());
+            //when new product added
+            if ($request->hasFile('file')) {
+                $file = $request->file('file');
+                $file_path = $file->move(public_path('uploads/products'), $file->getClientOriginalName());
+                 $Product->pic = $file->getClientOriginalName();
+            }
 
-            $Product->pic = $file->getClientOriginalName();
+            //when versoin of product store 
+            // when product edited
+            else{
+                $Product->pic  = $request->pic;
+            }
+           
             $Product->name = $request->name;
             $Product->description = $request->description;
             $Product->more_description = $request->more_description;

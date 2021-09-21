@@ -169,8 +169,11 @@
                                           @method('PUT')
                                           <div class="form-group">
                                             <p style='text-align:left;' for="photo"> Photo</p>
-                                            <input type="file" class="form-control mb-2" id="photo" name="file" required>
-                                            <div class='output'></div>
+                                            <input type="file" class="form-control mb-2" id="photo" name="file">
+                                            <div class='output'>
+                                              <img src="{{ url('uploads/products') }}/{{ $product->pic ?? 'clientlogo.jpg' }}" alt="clientlogo" class="img-thumbnail img-fluid" style='max-width:300px'>
+                                              <input type='hidden' name='pic' value='{{$product->pic}}'>
+                                            </div>
                                            </div>
                                            
                                           <div class="form-group">
@@ -269,11 +272,11 @@
 
                                 <!-- Add version -->
                                 <button type="button" class="btn btn-primary btn-sm"  data-toggle="modal"  data-target="{{ '#addVersionModal' . $product->id }}"><i class="fa fa-plus"></i></button>
-                                <div class="modal fade" id="{{ '#addVersionModal' . $product->id }}" aria-modal="true" role="dialog">
+                                <div class="modal fade" id="{{ 'addVersionModal' . $product->id }}" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
                                   <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title text-dark">Add New Product</h4>
+                                        <h4 class="modal-title text-dark">Add New Version</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                           <span aria-hidden="true">×</span>
                                         </button>
@@ -283,24 +286,30 @@
                                         @csrf
                                         <div class="form-group">
                                           <p style='text-align:left;' for="photo"> Photo</p>
-                                          <input type="file" class="form-control mb-2" id="photo" name="file" required>
-                                          <div class='output'></div>
+                                          
+                                          <input type="file" class="form-control mb-2" id="photo" name="file">
+                                          <div class='output'>
+                                              <img src="{{ url('uploads/products') }}/{{ $product->pic ?? 'clientlogo.jpg' }}" alt="clientlogo" class="img-thumbnail img-fluid" style='max-width:300px'>
+                                          </div>
+                                          <input type='hidden' name='pic' value='{{$product->pic}}'>
                                         </div>
+
+                                      <div class="form-group" >
+                                        <p style='text-align:left;' class='text-dark' for="name">Item Name</p>
+                                        <input  type="text"  name='name' class="form-control mb-2" id="name" placeholder="{{$product->name }}" required disabled>
+                                        <input type='hidden' name ='name' value={{ $product->name }}>
+                                      </div>
+                                      <div class="form-group" style='display:none;'>
                                         
-                                        <div class="form-group">
-                                          <p style='text-align:left;' class='text-dark' for="name">Item Name</p>
-                                          <input  type="text"  name='name' class="form-control mb-2" id="name" placeholder="Enter Item Name" required>
-                                        </div>
-                                        <div class="form-group">
-                                          
-                                          <p style='text-align:left;' for="category">Category</p>
-                                          <select class="form-control mb-2" id="category" name="category">
-                                              @foreach ($categories as $category)
-                                              <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                              @endforeach
-                                          </select>
-                                          
-                                        </div>
+                                        <p style='text-align:left;' for="category">Category</p>
+                                        <select class="form-control mb-2" id="category" name="category">
+                                            @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            @endforeach
+                                        </select>
+                                      </div>
+                                        
+  
                                       <div class="form-group row">
                                           <div class="col-md-3 col-6">
                                               <p style='text-align:left;' class='text-dark' for="weight">Weight</p>
@@ -320,13 +329,13 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="form-group">
+                                        <div class="form-group" style='display:none;'>
                                             <p style='text-align:left;' class='text-dark'>Product Details</p>
-                                            <textarea id="productdetails" name="description" class="form-control" style="height: 200px"></textarea>
+                                            <textarea id="productdetails" name="description" class="form-control" style="height: 200px" value='{{$product->description}}' >{{$product->description}}</textarea>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" style='display:none;'>
                                             <p style='text-align:left;' class='text-dark'>Product Details 2</p>
-                                            <textarea id="productdetails2" name="more_description" class="form-control" style="height: 200px"></textarea>
+                                            <textarea id="productdetails2" name="more_description" class="form-control" style="height: 200px" value='{{$product->more_description}}'>{{$product->more_description}}</textarea>
                                         </div>
                                         
                                         <div class="form-group">

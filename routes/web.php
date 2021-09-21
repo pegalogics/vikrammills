@@ -99,8 +99,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     
 
     //product
-    Route::resource('products', ProductController::class);
-    Route::resource('product',ProductController::class,'add_view');
+    Route::resource('product', ProductController::class);
+    Route::get('product/add/view', [ProductController::class,'add_view'])->name('product.add.view');
 
     Route::get('product/view',[ProductController::class,'view']);
     Route::any('/add-product', [AdminController::class, 'addProducts'] );
