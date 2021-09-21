@@ -158,7 +158,7 @@
                         <th>
                           <img
                             class="img-thumbnail rounded-circle"
-                            src="{{ url('/') . '/uploads/' . $customer->pic }}"
+                            src="{{ url('/') . '/uploads/products/' . $customer->pic }}"
                             alt=""
                             style='width:5rem; height:auto;'>
                         </th>

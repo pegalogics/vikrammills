@@ -69,7 +69,7 @@
                         @foreach ($products as $product)
                         <tr>
                             <td>{{ $product->id }}</td>
-                            <td><img src="{{url('/') .'/'. $product->pic}}" alt="" style="width:150px;"></td>
+                            <td><img src="{{url('/uploads/products') .'/'. $product->pic}}" alt="" style="width:150px;"></td>
                             <td>{{ $product->name }}</td>
                             <td>{{ $product->category }}</td>
                             <td>{{ $product->weight }}</td>
@@ -96,7 +96,7 @@
                                           @csrf
                                           <div class="form-group">
                                             <p style='text-align:left;' for="photo"> Photo</p>
-                                            <img src="{{url('/') .'/'. $product->pic}}" alt="{{ $product->name }}" style="max-width: 150px;">
+                                            <img src="{{url('/uploads/products') .'/'. $product->pic}}" alt="{{ $product->name }}" style="max-width: 150px;">
                                            </div>
                                            
                                           <div class="form-group">
@@ -164,8 +164,9 @@
                                       </div>
                                       <div class="modal-body">
                                         
-                                        <form action="{{ url('admin/products/edit', $product->id) }}" method='post' enctype='multipart/form-data'>
+                                        <form action="{{ route('product.update', $product->id) }}" method='post'  enctype='multipart/form-data'>
                                           @csrf
+                                          @method('PUT')
                                           <div class="form-group">
                                             <p style='text-align:left;' for="photo"> Photo</p>
                                             <input type="file" class="form-control mb-2" id="photo" name="file" required>
@@ -250,14 +251,101 @@
                                       </div>
                                       <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal"> Close </button>
-                                        <a class="btn btn-danger" href="{{ url('admin/products/delete', $product->id) }}">Delete </a>
+                                         <form
+                                    action="{{ route('product.destroy', $product->id) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button
+                                      type="submit"
+                                      class="btn btn-danger">
+                                      Delete
+                                    </button>
+                                  </form>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
+
                                 <!-- Add version -->
                                 <button type="button" class="btn btn-primary btn-sm"  data-toggle="modal"  data-target="{{ '#addVersionModal' . $product->id }}"><i class="fa fa-plus"></i></button>
-                                  
+                                <div class="modal fade" id="{{ '#addVersionModal' . $product->id }}" aria-modal="true" role="dialog">
+                                <div class="modal-dialog modal-lg">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title text-dark">Add New Product</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <form action="{{ route('product.store') }}" method='post' enctype='multipart/form-data'>
+                                        @csrf
+                                        <div class="form-group">
+                                          <p style='text-align:left;' for="photo"> Photo</p>
+                                          <input type="file" class="form-control mb-2" id="photo" name="file" required>
+                                          <div class='output'></div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                          <p style='text-align:left;' class='text-dark' for="name">Item Name</p>
+                                          <input  type="text"  name='name' class="form-control mb-2" id="name" placeholder="Enter Item Name" required>
+                                        </div>
+                                        <div class="form-group">
+                                          
+                                          <p style='text-align:left;' for="category">Category</p>
+                                          <select class="form-control mb-2" id="category" name="category">
+                                              @foreach ($categories as $category)
+                                              <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                              @endforeach
+                                          </select>
+                                          
+                                        </div>
+                                      <div class="form-group row">
+                                          <div class="col-md-3 col-6">
+                                              <p style='text-align:left;' class='text-dark' for="weight">Weight</p>
+                                              <input  type="text"  name='weight' class="form-control mb-2" id="weight" placeholder="Enter Item Weight" required>
+                                          </div>
+                                          <div class="col-md-3 col-6">
+                                              <p style='text-align:left;' class='text-dark' for="price">Price</p>
+                                              <input  type="number"  name='price' class="form-control mb-2" id="price" placeholder="Enter Item Price" required>
+                                          </div>
+                                          <div class="col-md-3 col-6">
+                                              <p style='text-align:left;' class='text-dark' for="discount">Discount</p>
+                                              <input  type="number"  name='discount' class="form-control mb-2" id="discount" placeholder="Enter Item Discount" required>
+                                          </div>
+                                          <div class="col-md-3 col-6">
+                                                <p style='text-align:left;' for="quantity">Quantity</p>
+                                                <input  type="number"  name='quantity' class="form-control mb-2" id="quantity" placeholder="Enter Quantity" required>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <p style='text-align:left;' class='text-dark'>Product Details</p>
+                                            <textarea id="productdetails" name="description" class="form-control" style="height: 200px"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <p style='text-align:left;' class='text-dark'>Product Details 2</p>
+                                            <textarea id="productdetails2" name="more_description" class="form-control" style="height: 200px"></textarea>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                          <p style='text-align:left;' class='text-dark' for="status">Status</p>
+                                          <select  name='status' class="form-control mb-2" id="status" required>
+                                              <option value="1">In-Stock</option>
+                                              <option value="0">Out of Stock</option>
+                                          </select>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-success float-right"><i class="fa fa-plus"></i> Save Item</button>
+                                      </form>
+
+
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
 
 
                             </td>
@@ -286,7 +374,7 @@
       </div>
       <div class="modal-body">
         
-        <form action="{{ url('admin/products') }}" method='post' enctype='multipart/form-data'>
+        <form action="{{ route('product.store') }}" method='post' enctype='multipart/form-data'>
           @csrf
           <div class="form-group">
             <p style='text-align:left;' for="photo"> Photo</p>

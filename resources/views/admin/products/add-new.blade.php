@@ -42,7 +42,7 @@
                       </div>
                     @endif
                     
-                    <form action="{{ url('admin/products') }}" method='post' enctype='multipart/form-data'>
+                    <form action="{{ route('product.store') }}" method='post' enctype='multipart/form-data'>
                       @csrf
                       <div class="form-group">
                         <p style='text-align:left;' for="photo"> Photo</p>

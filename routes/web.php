@@ -64,7 +64,7 @@ Route::post('contact',[ContactSubmitsController::class,'mail'])->name('contact.m
 
 
 Route::get('blog',[BlogController::class,'index_customer'])->name('customer.blog');
-Route::resource('product',ProductController::class);
+
 
 
 
@@ -99,6 +99,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     
 
     //product
+    Route::resource('products', ProductController::class);
+    Route::resource('product',ProductController::class,'add_view');
+
+    Route::get('product/view',[ProductController::class,'view']);
     Route::any('/add-product', [AdminController::class, 'addProducts'] );
     Route::any('/products', [AdminController::class, 'products'] );
     Route::post('/products/edit/{id}', [AdminController::class, 'productEdit']);
