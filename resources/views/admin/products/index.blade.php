@@ -75,7 +75,7 @@
                             <td>{{ $product->weight }}</td>
                             <td>{{ $product->price }}</td>
                             <td>{{ $product->discount }}</td>
-                            <td>{{ $product->discounted_price }}</td>
+                            <td>{{ $product->price - $product->discount }}</td>
                             <td>{{ $product->quantity }}</td>
                             <td>{{ $product->status }}</td>
                             <td style="width: 150px">
