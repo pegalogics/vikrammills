@@ -77,7 +77,13 @@
                             <td>{{ $product->discount }}</td>
                             <td>{{ $product->price - $product->discount }}</td>
                             <td>{{ $product->quantity }}</td>
-                            <td>{{ $product->status }}</td>
+                            <td>
+                              @if($product->status == 1)
+                              In-Stock
+                              @else
+                              Out of Stock
+                              @endif
+                            </td>
                             <td style="width: 150px">
                                 
                                 <button type="button" class="btn btn-info btn-sm"  data-toggle="modal"  data-target={{ '#viewModal' . $product->id }}><i class="fa fa-eye"></i></button>
@@ -139,7 +145,13 @@
                                            <hr>
                                           <div class="form-group">
                                             <p style='text-align:left;' class='text-dark' for="status">Status</p>
-                                            <p class="text-success"><strong>In Stock</strong></p>
+                                            <p class="text-success"><strong>
+                                              @if($product->status == 1)
+                                                In Stock
+                                              @else
+                                                Out of Stock
+                                              @endif
+                                            </strong></p>
                                           </div>
                                         
             
@@ -220,8 +232,14 @@
                                           <div class="form-group">
                                             <p style='text-align:left;' class='text-dark' for="status">Status</p>
                                             <select  name='status' class="form-control mb-2" id="status" required>
+                                                @if($product->status == 1))
                                                 <option value="1">In-Stock</option>
                                                 <option value="0">Out of Stock</option>
+                                                @else
+                                                <option value="0">Out of Stock</option>
+                                                <option value="1">In-Stock</option>
+                                                @endif
+                        
                                             </select>
                                           </div>
                                           

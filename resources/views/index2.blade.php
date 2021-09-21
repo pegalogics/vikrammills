@@ -70,7 +70,7 @@
                 <div class="col-lg-3 col-md-3 col-sm-6 col-12">
                     <div class="ltn__product-item ltn__product-item-3 text-center">
                         <div class="product-img">
-                            <a href="product.html"><img src={{url($product->pic)}} alt="#"></a>
+                            <a href=""><img src="{{ url('uploads/products') }}/{{ $product->pic ?? '' }}" alt="#"></a>
                       </div>
                         
                     </div>

@@ -17,6 +17,7 @@ use App\Http\Controllers\AboutAdminController;
 use App\Http\Controllers\ClientlogoController;
 use App\Http\Controllers\ContactPageController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\ProductDetailController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ContactSubmitsController;
 
@@ -60,12 +61,9 @@ Route::get('about',[AboutController::class,'index_customer'])->name('customer.ab
 //For submitting contact form by customer
 Route::get('contact',[ContactPageController::class,'index_customer'])->name('customer.contact');
 Route::post('contact',[ContactSubmitsController::class,'mail'])->name('contact.mail');
-
-
-
 Route::get('blog',[BlogController::class,'index_customer'])->name('customer.blog');
 
-
+Route::get('product-detail/{id}',[ProductDetailController::class,'index'])->name('product.detail');
 
 
 Route::group([
@@ -101,6 +99,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     //product
     Route::resource('product', ProductController::class);
     Route::get('product/add/view', [ProductController::class,'add_view'])->name('product.add.view');
+    Route::get('product/out_of_stock/index',[ProductController::class,'out_of_stock_index'])->name('product.out_of_stock.index');
 
     Route::get('product/view',[ProductController::class,'view']);
     Route::any('/add-product', [AdminController::class, 'addProducts'] );

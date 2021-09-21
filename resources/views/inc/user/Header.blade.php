@@ -92,7 +92,7 @@
                                                 <li>
                                                     <div class="menu-product-item">
                                                         <div class="menu-product-img">
-                                                            <a href="{{ url('product-detail/' . $product->id) }}"><img src={{url($product->pic)}} alt="{{$product->name}}"></a>
+                                                            <a href="{{ route('product.detail',$product->id) }}"><img src="{{ url('uploads/products') }}/{{ $product->pic ?? '' }}" alt="{{$product->name}}"></a>
                                                         </div>
                                                         <div class="product-info">
                                                             <h2 class="product-title"><a href="#">{{$product->name}}</a></h2>

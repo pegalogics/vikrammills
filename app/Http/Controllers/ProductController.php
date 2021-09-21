@@ -26,6 +26,12 @@ class ProductController extends Controller
         return view('admin.products.add-new',['products' => Product::all(), 'categories' => Category::all()]);
     }
 
+    // product outofstock
+    public function out_of_stock_index(){
+  
+        return view('admin.products.index',['products' => Product::where('status','0')->get(), 'categories' => Category::all()]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

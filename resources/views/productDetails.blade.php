@@ -6,6 +6,7 @@
 @section('content')   
         @include('inc.user.banner')
         <!-- SHOP DETAILS AREA START -->
+        <!-- line -->
         <div class="ltn__shop-details-area pt-120 pb-85">
             <div class="container">
                 <div class="row">
